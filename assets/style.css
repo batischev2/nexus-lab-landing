@@ -246,6 +246,7 @@ ul { list-style: none; }
 .orbit__rotor {
   position: absolute;
   inset: 0;
+  z-index: 1;
   animation: orbitSpin 60s linear infinite;
 }
 @keyframes orbitSpin {
@@ -268,11 +269,27 @@ ul { list-style: none; }
   background: rgba(18, 23, 30, 0.92);
   text-align: center;
   transform: translate(-50%, -50%) rotate(calc(var(--a) * -1));
-  animation: orbitCounter 60s linear infinite;
+  animation: orbitCounter 60s linear infinite, cardGlow 15s linear infinite;
 }
 @keyframes orbitCounter {
   from { transform: translate(-50%, -50%) rotate(calc(var(--a) * -1)); }
   to { transform: translate(-50%, -50%) rotate(calc(var(--a) * -1 - 360deg)); }
+}
+/* Вспышка в момент, когда точка-сигнал догоняет карточку:
+   точка (12с/круг) настигает карточки (60с/круг) каждые 3с */
+.orbit__sat:nth-child(2) .orbit__card { animation-delay: 0s, 3s; }
+.orbit__sat:nth-child(3) .orbit__card { animation-delay: 0s, 6s; }
+.orbit__sat:nth-child(4) .orbit__card { animation-delay: 0s, 9s; }
+.orbit__sat:nth-child(5) .orbit__card { animation-delay: 0s, 12s; }
+@keyframes cardGlow {
+  0%, 100% {
+    border-color: var(--accent);
+    box-shadow: 0 0 28px rgba(30, 200, 192, 0.45);
+  }
+  12%, 88% {
+    border-color: rgba(30, 200, 192, 0.5);
+    box-shadow: 0 0 0 rgba(30, 200, 192, 0);
+  }
 }
 .orbit__card small {
   font-size: 0.62rem;
@@ -289,14 +306,11 @@ ul { list-style: none; }
   color: var(--ink);
   white-space: nowrap;
 }
-.orbit__card--goal {
-  border-color: var(--accent);
-  box-shadow: 0 0 26px rgba(30, 200, 192, 0.35);
-}
 .orbit__dot {
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 0;
   width: 8px;
   height: 8px;
   margin: -4px 0 0 -4px;
