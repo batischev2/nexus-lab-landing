@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Веб-Кузница: разработка и маркетинг — сайт, бот и реклама под ключ</title>
-  <meta name="description" content="Сайт, Telegram-бот и реклама в Яндексе под ключ. Настраиваем всё так, чтобы реклама приносила заявки, а не просто клики. Работаем по всей России.">
+  <meta name="description" content="Продающий сайт или лендинг, реклама в Яндексе и SEO-продвижение под ключ. Настраиваем всё так, чтобы реклама приносила заявки, а не просто клики. Работаем по всей России.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
@@ -288,6 +288,31 @@
       border-radius: 50%;
       background: var(--accent);
       box-shadow: 0 0 10px var(--accent);
+    }
+
+    /* Компактная воронка для экранов без SVG-схемы */
+    .hero__flow-mini {
+      display: none;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 1.6rem;
+      font-size: 0.78rem;
+      color: #c5ced9;
+    }
+    .hero__flow-mini span {
+      padding: 0.35rem 0.7rem;
+      border: 1px solid rgba(30, 200, 192, 0.3);
+      border-radius: 999px;
+      background: var(--bg-elev);
+      white-space: nowrap;
+    }
+    .hero__flow-mini i {
+      font-style: normal;
+      color: var(--accent);
+    }
+    @media (max-width: 979.98px) {
+      .hero__flow-mini { display: flex; }
     }
 
     /* Sections common */
@@ -829,7 +854,7 @@
 
       <div class="wrap hero__inner">
       <div class="hero__side" aria-hidden="true">
-        <svg class="hero__flow" viewBox="0 0 560 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="hero__flow" viewBox="0 0 560 660" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stop-color="#1ec8c0"/>
@@ -841,28 +866,36 @@
             </filter>
           </defs>
           <!-- Connectors -->
-          <path class="flow-line" d="M190 92 C 268 92, 280 128, 280 198" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.45"/>
-          <path class="flow-line" d="M355 240 C 433 240, 445 276, 445 346" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.45"/>
+          <path class="flow-line" d="M160 52 C 206 52, 218 90, 218 168" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.45"/>
+          <path class="flow-line" d="M293 210 C 339 210, 351 248, 351 326" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.45"/>
+          <path class="flow-line" d="M426 368 C 473 368, 485 406, 485 484" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.45"/>
 
           <!-- Pipeline nodes -->
-          <rect x="40" y="50" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.92)"/>
-          <text x="115" y="86" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ДИРЕКТ</text>
-          <text x="115" y="110" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Трафик</text>
+          <rect x="10" y="10" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.92)"/>
+          <text x="85" y="46" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">САЙТ / ЛЕНДИНГ</text>
+          <text x="85" y="70" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Разработка</text>
 
-          <rect x="205" y="198" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.92)"/>
-          <text x="280" y="234" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ЛЕНДИНГ</text>
-          <text x="280" y="258" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Конверсия</text>
+          <rect x="143" y="168" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.92)"/>
+          <text x="218" y="204" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ДИРЕКТ + SEO</text>
+          <text x="218" y="228" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Трафик</text>
 
-          <rect x="370" y="346" width="150" height="84" rx="12" stroke="url(#g1)" stroke-width="1.5" fill="rgba(18,23,30,0.92)" filter="url(#glow)"/>
-          <text x="445" y="382" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">TELEGRAM / CRM</text>
-          <text x="445" y="406" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Заявки</text>
+          <rect x="276" y="326" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.92)"/>
+          <text x="351" y="362" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ПОСАДОЧНАЯ</text>
+          <text x="351" y="386" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Конверсия</text>
+
+          <rect x="410" y="484" width="150" height="84" rx="12" stroke="url(#g1)" stroke-width="1.5" fill="rgba(18,23,30,0.92)" filter="url(#glow)"/>
+          <text x="485" y="520" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">TELEGRAM / CRM</text>
+          <text x="485" y="544" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Заявки</text>
 
           <!-- Сигнал, бегущий по воронке -->
           <circle r="4" fill="#1ec8c0">
-            <animateMotion dur="2.8s" repeatCount="indefinite" path="M190 92 C 268 92, 280 128, 280 198"/>
+            <animateMotion dur="3s" repeatCount="indefinite" path="M160 52 C 206 52, 218 90, 218 168"/>
+          </circle>
+          <circle r="4" fill="#2db4d8">
+            <animateMotion dur="3s" begin="1s" repeatCount="indefinite" path="M293 210 C 339 210, 351 248, 351 326"/>
           </circle>
           <circle r="4" fill="#3aa0ff">
-            <animateMotion dur="2.8s" begin="1.4s" repeatCount="indefinite" path="M355 240 C 433 240, 445 276, 445 346"/>
+            <animateMotion dur="3s" begin="2s" repeatCount="indefinite" path="M426 368 C 473 368, 485 406, 485 484"/>
           </circle>
         </svg>
       </div>
@@ -871,8 +904,11 @@
         <p class="hero__eyebrow">Веб-Кузница: разработка и маркетинг</p>
         <h1 id="hero-title">Чтобы реклама приводила клиентов, а не съедала бюджет</h1>
         <p class="hero__lead">
-          Сделаем сайт, Telegram-бота и настроим рекламу в Яндексе — под ключ. Каждая заявка сразу приходит вам в Telegram, ни один клиент не теряется.
+          Сделаем продающий сайт или лендинг, настроим рекламу в Яндексе и SEO-продвижение — под ключ. Реклама приводит людей на вашу страницу, а каждая заявка с неё сразу попадает к вам — ни один клиент не теряется.
         </p>
+        <div class="hero__flow-mini" aria-hidden="true">
+          <span>Разработка</span><i>→</i><span>Трафик</span><i>→</i><span>Конверсия</span><i>→</i><span>Заявки</span>
+        </div>
         <div class="btn-row">
           <a class="btn btn--primary" href="#lead">Получить оценку</a>
           <a class="btn btn--ghost" href="#packages">Смотреть пакеты</a>
@@ -1047,7 +1083,7 @@
                 </div>
                 <div>
                   <strong>Виктор</strong>
-                  <span>Фронт · SEO · продажи по звонкам</span>
+                  <span>Фронтенд-разработчик · SEO-специалист</span>
                 </div>
               </div>
               <div class="partner">
@@ -1056,7 +1092,7 @@
                 </div>
                 <div>
                   <strong>Дмитрий</strong>
-                  <span>Бэк · Директ · лидген · CRM</span>
+                  <span>Бэкенд-разработчик · Маркетолог Яндекс.Директ</span>
                 </div>
               </div>
             </div>
