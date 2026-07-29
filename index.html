@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Веб Лаборатория маркетинга и разработки — сайт, бот и реклама под ключ</title>
+  <title>Веб-Кузница: разработка и маркетинг — сайт, бот и реклама под ключ</title>
   <meta name="description" content="Сайт, Telegram-бот и реклама в Яндексе под ключ. Настраиваем всё так, чтобы реклама приносила заявки, а не просто клики. Работаем по всей России.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -172,7 +172,7 @@
       position: relative;
       min-height: 100svh;
       display: grid;
-      align-items: end;
+      align-items: center;
       padding: 6.5rem 0 3.5rem;
       overflow: hidden;
     }
@@ -201,12 +201,23 @@
       mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, #000 20%, transparent 75%);
       opacity: 0.7;
     }
+    .hero__inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero__side { display: none; }
+    @media (min-width: 980px) {
+      .hero__inner { grid-template-columns: minmax(0, 38rem) 1fr; }
+      .hero__side { display: block; grid-column: 2; grid-row: 1; }
+      .hero__content { grid-column: 1; grid-row: 1; }
+    }
     .hero__flow {
-      position: absolute;
-      right: max(-4%, calc(50% - 560px));
-      top: 18%;
-      width: min(52vw, 560px);
-      height: min(58vh, 520px);
+      width: 100%;
+      height: auto;
+      max-height: 72vh;
       opacity: 0;
       animation: heroIn 1.1s var(--ease) 0.25s forwards;
     }
@@ -768,11 +779,9 @@
 
     @media (max-width: 700px) {
       .hero {
-        align-items: center;
         padding-top: 7rem;
         padding-bottom: 2.5rem;
       }
-      .hero__flow { display: none; }
       .btn { width: 100%; }
       .btn-row { width: 100%; }
     }
@@ -796,9 +805,9 @@
 
   <header class="nav" id="nav">
     <div class="wrap nav__inner">
-      <a class="logo" href="#top" aria-label="Веб Лаборатория — наверх">
+      <a class="logo" href="#top" aria-label="Веб-Кузница — наверх">
         <span class="logo__mark" aria-hidden="true"></span>
-        Веб Лаборатория
+        Веб-Кузница
       </a>
       <nav class="nav__links" aria-label="Разделы">
         <a href="#how">Как работает</a>
@@ -816,6 +825,10 @@
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__visual" aria-hidden="true">
         <div class="hero__grid"></div>
+      </div>
+
+      <div class="wrap hero__inner">
+      <div class="hero__side" aria-hidden="true">
         <svg class="hero__flow" viewBox="0 0 560 520" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
@@ -854,8 +867,8 @@
         </svg>
       </div>
 
-      <div class="wrap hero__content">
-        <p class="hero__eyebrow">Веб Лаборатория маркетинга и разработки</p>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Веб-Кузница: разработка и маркетинг</p>
         <h1 id="hero-title">Чтобы реклама приводила клиентов, а не съедала бюджет</h1>
         <p class="hero__lead">
           Сделаем сайт, Telegram-бота и настроим рекламу в Яндексе — под ключ. Каждая заявка сразу приходит вам в Telegram, ни один клиент не теряется.
@@ -869,6 +882,7 @@
           <span><i class="dot" aria-hidden="true"></i> Запуск за 2–4 недели</span>
           <span><i class="dot" aria-hidden="true"></i> Оценка задачи — бесплатно</span>
         </div>
+      </div>
       </div>
     </section>
 
@@ -1153,7 +1167,7 @@
 
   <footer>
     <div class="wrap footer__inner">
-      <div class="footer__brand">Веб Лаборатория маркетинга и разработки</div>
+      <div class="footer__brand">Веб-Кузница: разработка и маркетинг</div>
       <div>Python · боты · сайты · Директ · по России</div>
       <div>
         <a href="https://t.me/n9dmitry" target="_blank" rel="noopener noreferrer">Telegram</a>
@@ -1213,7 +1227,7 @@
         }
 
         var text = [
-          "Заявка с лендинга Веб Лаборатории",
+          "Заявка с лендинга Веб-Кузницы",
           "Имя: " + name,
           "Контакт: " + contact,
           "Интересует: " + pack,
