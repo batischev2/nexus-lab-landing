@@ -313,6 +313,26 @@
     }
     @media (max-width: 979.98px) {
       .hero__flow-mini { display: flex; }
+      .hero__flow-mini span {
+        animation: chipGlow 4.8s ease-in-out infinite;
+      }
+      .hero__flow-mini span:nth-of-type(2) { animation-delay: 1.2s; }
+      .hero__flow-mini span:nth-of-type(3) { animation-delay: 2.4s; }
+      .hero__flow-mini span:nth-of-type(4) { animation-delay: 3.6s; }
+    }
+    @keyframes chipGlow {
+      0%, 25%, 100% {
+        border-color: rgba(30, 200, 192, 0.3);
+        color: #c5ced9;
+        background: var(--bg-elev);
+        box-shadow: none;
+      }
+      8%, 15% {
+        border-color: var(--accent);
+        color: var(--ink);
+        background: rgba(30, 200, 192, 0.14);
+        box-shadow: 0 0 16px rgba(30, 200, 192, 0.35);
+      }
     }
 
     /* Sections common */
@@ -816,7 +836,8 @@
       .hero__content,
       .hero__flow,
       .reveal,
-      .flow-line {
+      .flow-line,
+      .hero__flow-mini span {
         animation: none !important;
         transition: none !important;
         opacity: 1 !important;
