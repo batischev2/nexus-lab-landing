@@ -5,10 +5,195 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Веб-Кузница: разработка и маркетинг — сайт, бот и реклама под ключ</title>
   <meta name="description" content="Продающий сайт или лендинг, реклама в Яндексе и SEO-продвижение под ключ. Настраиваем всё так, чтобы реклама приносила заявки, а не просто клики. Работаем по всей России.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0a0d11">
+  <link rel="canonical" href="https://nexus-lab-landing.vercel.app/">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Веб-Кузница">
+  <meta property="og:url" content="https://nexus-lab-landing.vercel.app/">
+  <meta property="og:title" content="Веб-Кузница: сайт, бот и реклама под ключ">
+  <meta property="og:description" content="Продающий лендинг, Telegram-бот и Яндекс.Директ — под ключ. Реклама приводит заявки, а не просто клики. Работаем по всей России.">
+  <meta property="og:image" content="https://nexus-lab-landing.vercel.app/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Веб-Кузница — сайт, бот и реклама под ключ">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Веб-Кузница: сайт, бот и реклама под ключ">
+  <meta name="twitter:description" content="Продающий лендинг, Telegram-бот и Яндекс.Директ — под ключ. Работаем по всей России.">
+  <meta name="twitter:image" content="https://nexus-lab-landing.vercel.app/img/og-image.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/index.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://nexus-lab-landing.vercel.app/#organization",
+        "name": "Веб-Кузница",
+        "url": "https://nexus-lab-landing.vercel.app/",
+        "logo": "https://nexus-lab-landing.vercel.app/img/favicon.svg",
+        "description": "Разработка сайтов и лендингов, Telegram-ботов, автоматизация и реклама в Яндекс.Директе под ключ.",
+        "areaServed": "RU",
+        "sameAs": ["https://t.me/n9dmitry"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "url": "https://t.me/n9dmitry",
+          "availableLanguage": "Russian"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://nexus-lab-landing.vercel.app/#website",
+        "url": "https://nexus-lab-landing.vercel.app/",
+        "name": "Веб-Кузница",
+        "description": "Продающий сайт или лендинг, реклама в Яндексе и SEO-продвижение под ключ.",
+        "publisher": { "@id": "https://nexus-lab-landing.vercel.app/#organization" },
+        "inLanguage": "ru-RU"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://nexus-lab-landing.vercel.app/#webpage",
+        "url": "https://nexus-lab-landing.vercel.app/",
+        "name": "Веб-Кузница: разработка и маркетинг — сайт, бот и реклама под ключ",
+        "isPartOf": { "@id": "https://nexus-lab-landing.vercel.app/#website" },
+        "about": { "@id": "https://nexus-lab-landing.vercel.app/#organization" },
+        "description": "Продающий сайт или лендинг, реклама в Яндексе и SEO-продвижение под ключ. Настраиваем всё так, чтобы реклама приносила заявки, а не просто клики.",
+        "inLanguage": "ru-RU"
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://nexus-lab-landing.vercel.app/#service",
+        "name": "Веб-Кузница",
+        "url": "https://nexus-lab-landing.vercel.app/",
+        "image": "https://nexus-lab-landing.vercel.app/img/og-image.jpg",
+        "description": "Лендинги, Telegram-боты, автоматизация и Яндекс.Директ под ключ для малого и среднего бизнеса по всей России.",
+        "provider": { "@id": "https://nexus-lab-landing.vercel.app/#organization" },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Russia"
+        },
+        "priceRange": "₽₽",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Услуги Веб-Кузница",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Telegram-боты",
+                "description": "Приём заявок, меню, FAQ, интеграции с CRM и оплатой."
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "RUB",
+                "minPrice": "16000"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Лендинги и сайты",
+                "description": "Одностраничники под рекламу, бизнес-сайты и веб-сервисы."
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "RUB",
+                "minPrice": "32000"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Яндекс.Директ",
+                "description": "Аудит, настройка Поиска и РСЯ, ведение и оптимизация."
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "RUB",
+                "minPrice": "5000"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Под ключ",
+                "description": "Лендинг + бот + Яндекс.Директ: реклама ведёт на готовую воронку."
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "RUB",
+                "minPrice": "58000"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://nexus-lab-landing.vercel.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько занимает запуск «под ключ»?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Зависит от ТЗ. Типичный ориентир для лендинга + бота + базовой кампании — от 2–4 недель после брифа и предоплаты. Точные сроки фиксируем в договоре."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Почему на сайте нет полного прайса?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нижние планки есть в блоке услуг и пакетов. Финальная цена зависит от объёма, интеграций и гео. Бесплатно оценим задачу и назовём вилку под ваш бюджет."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Рекламный бюджет входит в пакет?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Оплата настройки и ведения — нам, бюджет на показы — в кабинете Яндекса отдельно. Ведение: фикс от 15 000 ₽/мес или 10–15% от бюджета — что больше."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Работаете только с Москвой?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет, работаем по всей России удалённо. Рекламу настраиваем на ваш город или на регионы, где есть ваши клиенты."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что с гарантией и поддержкой?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Гарантию и сроки обсуждаем индивидуально. Доработки готовых проектов — от 1 600 ₽/час. Сопровождение можно заложить отдельно."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -241,8 +426,8 @@
             <p>Вы общаетесь напрямую с теми, кто делает работу — без менеджеров-посредников и агентской наценки. Начинаем с малого: запускаем, смотрим на заявки и усиливаем то, что работает.</p>
             <div class="partners">
               <div class="partner">
-                <div class="partner__avatar" aria-hidden="true">
-                  <img src="img/viktor.jpg" alt="" onerror="this.remove()">В
+                <div class="partner__avatar">
+                  <img src="img/viktor.jpg" alt="Виктор — фронтенд-разработчик и SEO-специалист" width="64" height="64" loading="lazy" decoding="async" onerror="this.remove()">В
                 </div>
                 <div>
                   <strong>Виктор</strong>
@@ -250,8 +435,8 @@
                 </div>
               </div>
               <div class="partner">
-                <div class="partner__avatar" aria-hidden="true">
-                  <img src="img/dmitry.jpg" alt="" onerror="this.remove()">Д
+                <div class="partner__avatar">
+                  <img src="img/dmitry.jpg" alt="Дмитрий — бэкенд-разработчик и маркетолог Яндекс.Директ" width="64" height="64" loading="lazy" decoding="async" onerror="this.remove()">Д
                 </div>
                 <div>
                   <strong>Дмитрий</strong>
