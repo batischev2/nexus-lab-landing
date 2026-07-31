@@ -252,47 +252,64 @@
 
       <div class="wrap hero__inner">
       <div class="hero__side" aria-hidden="true">
-        <div class="hero__funnel">
-          <div class="funnel__glow"></div>
-          <div class="funnel__drop"></div>
-          <ol class="funnel__list">
-            <li class="funnel__step" style="--i: 0">
-              <span class="funnel__num">01</span>
-              <div>
-                <strong>Разработка</strong>
-                <small>Сайт / лендинг</small>
-              </div>
-            </li>
-            <li class="funnel__step" style="--i: 1">
-              <span class="funnel__num">02</span>
-              <div>
-                <strong>Трафик</strong>
-                <small>Директ + SEO</small>
-              </div>
-            </li>
-            <li class="funnel__step" style="--i: 2">
-              <span class="funnel__num">03</span>
-              <div>
-                <strong>Конверсия</strong>
-                <small>Посетители → лиды</small>
-              </div>
-            </li>
-            <li class="funnel__step" style="--i: 3">
-              <span class="funnel__num">04</span>
-              <div>
-                <strong>Заявки</strong>
-                <small>Telegram / CRM</small>
-              </div>
-            </li>
-            <li class="funnel__step funnel__step--result" style="--i: 4">
-              <span class="funnel__num">05</span>
-              <div>
-                <strong>Рост прибыли</strong>
-                <small>Ваш бизнес</small>
-              </div>
-            </li>
-          </ol>
-        </div>
+        <svg class="hero__flow" viewBox="0 0 560 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1ec8c0"/>
+              <stop offset="100%" stop-color="#3aa0ff"/>
+            </linearGradient>
+          </defs>
+
+          <path class="flow-line" d="M160 52 C 172 52, 180 90, 180 145" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.45"/>
+          <path class="flow-line" d="M255 187 C 267 187, 275 225, 275 280" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.45"/>
+          <path class="flow-line" d="M350 322 C 362 322, 370 360, 370 415" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.45"/>
+          <path class="flow-line" d="M445 457 C 457 457, 465 495, 465 550" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.45"/>
+
+          <!-- Точка рисуется ДО карточек — заходит «под» блок и пропадает -->
+          <circle r="5" fill="#1ec8c0">
+            <animateMotion
+              dur="7s"
+              repeatCount="indefinite"
+              calcMode="linear"
+              path="M85 52 L160 52 C172 52, 180 90, 180 145 L180 187 L255 187 C267 187, 275 225, 275 280 L275 322 L350 322 C362 322, 370 360, 370 415 L370 457 L445 457 C457 457, 465 495, 465 550 L465 592"
+            />
+          </circle>
+
+          <rect x="10" y="10" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)">
+            <animate attributeName="stroke" values="rgba(30,200,192,0.5);#1ec8c0;rgba(30,200,192,0.5)" keyTimes="0;0.03;0.12" dur="7s" repeatCount="indefinite"/>
+            <animate attributeName="stroke-width" values="1.2;2.5;1.2" keyTimes="0;0.03;0.12" dur="7s" repeatCount="indefinite"/>
+          </rect>
+          <text x="85" y="46" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">САЙТ / ЛЕНДИНГ</text>
+          <text x="85" y="70" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Разработка</text>
+
+          <rect x="105" y="145" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)">
+            <animate attributeName="stroke" values="rgba(30,200,192,0.5);#1ec8c0;rgba(30,200,192,0.5)" keyTimes="0;0.22;0.32" dur="7s" repeatCount="indefinite"/>
+            <animate attributeName="stroke-width" values="1.2;2.5;1.2" keyTimes="0;0.22;0.32" dur="7s" repeatCount="indefinite"/>
+          </rect>
+          <text x="180" y="181" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ДИРЕКТ + SEO</text>
+          <text x="180" y="205" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Трафик</text>
+
+          <rect x="200" y="280" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)">
+            <animate attributeName="stroke" values="rgba(30,200,192,0.5);#1ec8c0;rgba(30,200,192,0.5)" keyTimes="0;0.42;0.52" dur="7s" repeatCount="indefinite"/>
+            <animate attributeName="stroke-width" values="1.2;2.5;1.2" keyTimes="0;0.42;0.52" dur="7s" repeatCount="indefinite"/>
+          </rect>
+          <text x="275" y="316" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ПОСЕТИТЕЛИ</text>
+          <text x="275" y="340" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Конверсия</text>
+
+          <rect x="295" y="415" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)">
+            <animate attributeName="stroke" values="rgba(30,200,192,0.5);#1ec8c0;rgba(30,200,192,0.5)" keyTimes="0;0.60;0.70" dur="7s" repeatCount="indefinite"/>
+            <animate attributeName="stroke-width" values="1.2;2.5;1.2" keyTimes="0;0.60;0.70" dur="7s" repeatCount="indefinite"/>
+          </rect>
+          <text x="370" y="451" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">TELEGRAM / CRM</text>
+          <text x="370" y="475" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Заявки</text>
+
+          <rect x="390" y="550" width="150" height="84" rx="12" stroke="url(#g1)" stroke-width="1.5" fill="rgba(18,23,30,0.96)">
+            <animate attributeName="stroke-width" values="1.5;2.8;1.5" keyTimes="0;0.82;0.94" dur="7s" repeatCount="indefinite"/>
+            <animate attributeName="stroke" values="#1ec8c0;#3aa0ff;#1ec8c0" keyTimes="0;0.82;0.94" dur="7s" repeatCount="indefinite"/>
+          </rect>
+          <text x="465" y="586" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ВАШ БИЗНЕС</text>
+          <text x="465" y="610" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Рост прибыли</text>
+        </svg>
       </div>
 
       <div class="hero__content">
@@ -406,7 +423,7 @@
           <article class="service">
             <div class="service__top">
               <h3>Лендинги и сайты</h3>
-              <span class="service__price">от 32 000 ₽</span>
+              <span class="service__price">от 12 000 ₽</span>
             </div>
             <p>Одностраничники под рекламу, бизнес-сайты, веб-сервисы и личные кабинеты.</p>
             <span class="service__note">Адаптив · форма · аналитика · CMS / API</span>
