@@ -382,6 +382,69 @@ ul { list-style: none; }
   to { stroke-dashoffset: -200; }
 }
 
+/* Попадание точки в блок: лёгкий scale + яркая обводка */
+.flow-card {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: flowCardPop 7s linear infinite;
+}
+.flow-card rect {
+  animation: flowCardStroke 7s linear infinite;
+}
+.flow-card--1 { animation-delay: 0s; }
+.flow-card--1 rect { animation-delay: 0s; }
+.flow-card--2 { animation-delay: 1.54s; }
+.flow-card--2 rect { animation-delay: 1.54s; }
+.flow-card--3 { animation-delay: 2.94s; }
+.flow-card--3 rect { animation-delay: 2.94s; }
+.flow-card--4 { animation-delay: 4.2s; }
+.flow-card--4 rect { animation-delay: 4.2s; }
+.flow-card--5 { animation-delay: 5.6s; }
+.flow-card--5 rect { animation-delay: 5.6s; }
+
+@keyframes flowCardPop {
+  0%, 100% { transform: scale(1); }
+  2.5% { transform: scale(1.06); }
+  8% { transform: scale(1); }
+}
+@keyframes flowCardStroke {
+  0%, 100% {
+    stroke: rgba(30, 200, 192, 0.5);
+    stroke-width: 1.2px;
+    filter: none;
+  }
+  2.5% {
+    stroke: #1ec8c0;
+    stroke-width: 2.4px;
+    filter: drop-shadow(0 0 10px rgba(30, 200, 192, 0.45));
+  }
+  8% {
+    stroke: rgba(30, 200, 192, 0.5);
+    stroke-width: 1.2px;
+    filter: none;
+  }
+}
+.flow-card--5 rect {
+  animation-name: flowCardStrokeResult;
+}
+@keyframes flowCardStrokeResult {
+  0%, 100% {
+    stroke: rgba(30, 200, 192, 0.65);
+    stroke-width: 1.5px;
+    filter: none;
+  }
+  2.5% {
+    stroke: #3aa0ff;
+    stroke-width: 2.8px;
+    filter: drop-shadow(0 0 14px rgba(58, 160, 255, 0.4));
+  }
+  8% {
+    stroke: rgba(30, 200, 192, 0.65);
+    stroke-width: 1.5px;
+    filter: none;
+  }
+}
+
 /* Sections common */
 section {
   padding: 5rem 0;
@@ -1057,11 +1120,14 @@ body.has-sticky-cta {
   .hero__flow,
   .reveal,
   .hero__flow-mini span,
-  .flow-line {
+  .flow-line,
+  .flow-card,
+  .flow-card rect {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
+    filter: none !important;
   }
 }
   

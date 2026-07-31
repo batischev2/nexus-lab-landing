@@ -265,8 +265,16 @@
           <path class="flow-line" d="M350 322 C 362 322, 370 360, 370 415" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.45"/>
           <path class="flow-line" d="M445 457 C 457 457, 465 495, 465 550" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.45"/>
 
-          <!-- Точка рисуется ДО карточек — заходит «под» блок и пропадает -->
-          <circle r="5" fill="#1ec8c0">
+          <!-- Видна только на линиях; на блоках opacity = 0 -->
+          <circle class="flow-dot" r="5" fill="#1ec8c0">
+            <animate
+              attributeName="opacity"
+              dur="7s"
+              repeatCount="indefinite"
+              calcMode="linear"
+              values="0;0;1;1;0;0;1;1;0;0;1;1;0;0;1;1;0;0"
+              keyTimes="0;0.05;0.07;0.19;0.22;0.26;0.28;0.39;0.42;0.46;0.48;0.57;0.60;0.64;0.66;0.77;0.80;1"
+            />
             <animateMotion
               dur="7s"
               repeatCount="indefinite"
@@ -275,40 +283,35 @@
             />
           </circle>
 
-          <rect x="10" y="10" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)">
-            <animate attributeName="stroke" values="rgba(30,200,192,0.5);#1ec8c0;rgba(30,200,192,0.5)" keyTimes="0;0.03;0.12" dur="7s" repeatCount="indefinite"/>
-            <animate attributeName="stroke-width" values="1.2;2.5;1.2" keyTimes="0;0.03;0.12" dur="7s" repeatCount="indefinite"/>
-          </rect>
-          <text x="85" y="46" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">САЙТ / ЛЕНДИНГ</text>
-          <text x="85" y="70" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Разработка</text>
+          <g class="flow-card flow-card--1">
+            <rect x="10" y="10" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)"/>
+            <text x="85" y="46" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">САЙТ / ЛЕНДИНГ</text>
+            <text x="85" y="70" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Разработка</text>
+          </g>
 
-          <rect x="105" y="145" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)">
-            <animate attributeName="stroke" values="rgba(30,200,192,0.5);#1ec8c0;rgba(30,200,192,0.5)" keyTimes="0;0.22;0.32" dur="7s" repeatCount="indefinite"/>
-            <animate attributeName="stroke-width" values="1.2;2.5;1.2" keyTimes="0;0.22;0.32" dur="7s" repeatCount="indefinite"/>
-          </rect>
-          <text x="180" y="181" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ДИРЕКТ + SEO</text>
-          <text x="180" y="205" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Трафик</text>
+          <g class="flow-card flow-card--2">
+            <rect x="105" y="145" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)"/>
+            <text x="180" y="181" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ДИРЕКТ + SEO</text>
+            <text x="180" y="205" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Трафик</text>
+          </g>
 
-          <rect x="200" y="280" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)">
-            <animate attributeName="stroke" values="rgba(30,200,192,0.5);#1ec8c0;rgba(30,200,192,0.5)" keyTimes="0;0.42;0.52" dur="7s" repeatCount="indefinite"/>
-            <animate attributeName="stroke-width" values="1.2;2.5;1.2" keyTimes="0;0.42;0.52" dur="7s" repeatCount="indefinite"/>
-          </rect>
-          <text x="275" y="316" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ПОСЕТИТЕЛИ</text>
-          <text x="275" y="340" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Конверсия</text>
+          <g class="flow-card flow-card--3">
+            <rect x="200" y="280" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)"/>
+            <text x="275" y="316" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ПОСЕТИТЕЛИ</text>
+            <text x="275" y="340" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Конверсия</text>
+          </g>
 
-          <rect x="295" y="415" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)">
-            <animate attributeName="stroke" values="rgba(30,200,192,0.5);#1ec8c0;rgba(30,200,192,0.5)" keyTimes="0;0.60;0.70" dur="7s" repeatCount="indefinite"/>
-            <animate attributeName="stroke-width" values="1.2;2.5;1.2" keyTimes="0;0.60;0.70" dur="7s" repeatCount="indefinite"/>
-          </rect>
-          <text x="370" y="451" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">TELEGRAM / CRM</text>
-          <text x="370" y="475" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Заявки</text>
+          <g class="flow-card flow-card--4">
+            <rect x="295" y="415" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)"/>
+            <text x="370" y="451" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">TELEGRAM / CRM</text>
+            <text x="370" y="475" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Заявки</text>
+          </g>
 
-          <rect x="390" y="550" width="150" height="84" rx="12" stroke="url(#g1)" stroke-width="1.5" fill="rgba(18,23,30,0.96)">
-            <animate attributeName="stroke-width" values="1.5;2.8;1.5" keyTimes="0;0.82;0.94" dur="7s" repeatCount="indefinite"/>
-            <animate attributeName="stroke" values="#1ec8c0;#3aa0ff;#1ec8c0" keyTimes="0;0.82;0.94" dur="7s" repeatCount="indefinite"/>
-          </rect>
-          <text x="465" y="586" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ВАШ БИЗНЕС</text>
-          <text x="465" y="610" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Рост прибыли</text>
+          <g class="flow-card flow-card--5">
+            <rect x="390" y="550" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.65)" stroke-width="1.5" fill="rgba(18,23,30,0.96)"/>
+            <text x="465" y="586" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ВАШ БИЗНЕС</text>
+            <text x="465" y="610" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Рост прибыли</text>
+          </g>
         </svg>
       </div>
 
