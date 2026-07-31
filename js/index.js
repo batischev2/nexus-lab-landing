@@ -28,7 +28,16 @@
   var offer = params.get("offer") || (location.hash === "#packages" ? "turnkey" : null);
   var select = document.getElementById("package");
   if (offer && select) {
-    var map = { turnkey: "turnkey", funnel: "funnel", bot: "bot", site: "site", direct: "direct" };
+    var map = {
+      turnkey: "turnkey",
+      funnel: "funnel",
+      growth: "growth",
+      audit: "audit",
+      bot: "bot",
+      site: "site",
+      direct: "direct",
+      other: "other"
+    };
     if (map[offer]) select.value = map[offer];
   }
 
@@ -41,24 +50,20 @@
     var name = form.name.value.trim();
     var contact = form.contact.value.trim();
     var pack = form.package.options[form.package.selectedIndex].text;
-    var task = form.task.value.trim();
 
-    // Goal hook for Yandex Metrika (replace XXXXXXX with counter id)
-    if (typeof window.ym === "function") {
-      window.ym(window.NEXUS_METRIKA_ID || 0, "reachGoal", "lead_submit");
+    if (typeof window.ym === "function" && window.NEXUS_METRIKA_ID) {
+      window.ym(window.NEXUS_METRIKA_ID, "reachGoal", "lead_submit");
     }
 
     var text = [
       "Заявка с лендинга Веб-Кузницы",
       "Имя: " + name,
       "Контакт: " + contact,
-      "Интересует: " + pack,
-      task ? "Задача: " + task : ""
-    ].filter(Boolean).join("\n");
+      "Интересует: " + pack
+    ].join("\n");
 
     form.classList.add("is-success");
 
-    // Open Telegram with prefilled message (user can send)
     var tg = "https://t.me/n9dmitry?text=" + encodeURIComponent(text);
     window.open(tg, "_blank", "noopener,noreferrer");
   });
@@ -73,11 +78,37 @@
     });
   });
 
-  // --- Yandex Metrika placeholder ---
+  // Sticky mobile CTA: show after hero, hide over lead form
+  var sticky = document.getElementById("sticky-cta");
+  var hero = document.querySelector(".hero");
+  var lead = document.getElementById("lead");
+  if (sticky && hero && lead && "IntersectionObserver" in window) {
+    var heroVisible = true;
+    var leadVisible = false;
+    var syncSticky = function () {
+      var show = !heroVisible && !leadVisible && window.matchMedia("(max-width: 700px)").matches;
+      sticky.hidden = !show;
+      document.body.classList.toggle("has-sticky-cta", show);
+    };
+    var heroIo = new IntersectionObserver(function (entries) {
+      heroVisible = entries[0].isIntersecting;
+      syncSticky();
+    }, { threshold: 0.15 });
+    var leadIo = new IntersectionObserver(function (entries) {
+      leadVisible = entries[0].isIntersecting;
+      syncSticky();
+    }, { threshold: 0.2 });
+    heroIo.observe(hero);
+    leadIo.observe(lead);
+    window.addEventListener("resize", syncSticky, { passive: true });
+    syncSticky();
+  }
+
+  // --- Yandex Metrika ---
+  // Раскомментируйте и подставьте ID счётчика:
   // window.NEXUS_METRIKA_ID = 00000000;
   // (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
   // m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0];
   // k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
   // ym(window.NEXUS_METRIKA_ID, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
 })();
-  

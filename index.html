@@ -141,6 +141,19 @@
                 "priceCurrency": "RUB",
                 "minPrice": "58000"
               }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Под ключ + рост",
+                "description": "Лендинг, бот, Директ, SEO и ведение рекламы 3 месяца с правками по Метрике."
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "RUB",
+                "minPrice": "90000"
+              }
             }
           ]
         }
@@ -171,6 +184,22 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Нет. Оплата настройки и ведения — нам, бюджет на показы — в кабинете Яндекса отдельно. Ведение: фикс от 15 000 ₽/мес или 10–15% от бюджета — что больше."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько закладывать на рекламный бюджет?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Зависит от региона и ниши. Тестовый бюджет обычно от 20–30 тыс. ₽/мес. Бюджет платится напрямую Яндексу, не нам."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что если реклама не окупится?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Гарантировать продажи не может никто. Но тест на данных за 2–4 недели покажет стоимость заявки — дальше решение по цифрам, а не по обещаниям."
             }
           },
           {
@@ -270,27 +299,41 @@
       </div>
     </section>
 
-    <!-- AUDIENCE -->
-    <section class="audience" id="audience" aria-labelledby="audience-title">
+    <!-- AUDIT lead magnet -->
+    <section class="audit" id="audit" aria-labelledby="audit-title">
+      <div class="wrap">
+        <div class="audit__panel reveal">
+          <div class="audit__copy">
+            <h2 id="audit-title">Уже льёте рекламу, а заявок мало? Разберём бесплатно</h2>
+            <p>Пришлите ссылку на сайт или кабинет — покажем 3–5 мест, куда утекает бюджет. Без обязательств, аудит остаётся у вас в любом случае.</p>
+          </div>
+          <a class="btn btn--primary" href="?offer=audit#lead">Получить бесплатный аудит</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAIN -->
+    <section class="pain" id="pain" aria-labelledby="pain-title">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2 id="audience-title">Для тех, кому нужны заявки, а не «просто сайт»</h2>
-          <p>Для малого и среднего бизнеса по всей России — когда нужен не «сайт ради сайта», а стабильный поток обращений от клиентов.</p>
+          <h2 id="pain-title">Знакомо?</h2>
+          <p>Типичные симптомы, когда реклама и сайт есть, а клиентов — нет.</p>
         </div>
-        <div class="audience__list reveal">
-          <div class="audience__item">
-            <h3>Уже льёте рекламу</h3>
-            <p>Кабинет есть, но клики не доходят до сделки: слабый лендинг, нет обработки лида, нет связки с CRM.</p>
+        <div class="pain__list reveal">
+          <div class="pain__item">
+            <p>«Клики есть — заявок нет. Бюджет уходит, телефон молчит.»</p>
           </div>
-          <div class="audience__item">
-            <h3>Запускаете с нуля</h3>
-            <p>Нужна быстрая точка входа под Директ: одна страница, форма, бот и понятная экономика лида.</p>
+          <div class="pain__item">
+            <p>«Подрядчик присылает красивые отчёты, но продаж с них не видно.»</p>
           </div>
-          <div class="audience__item">
-            <h3>Автоматизируете продажи</h3>
-            <p>Хотите, чтобы заявки сами падали в Telegram, базу или CRM — без ручной переписки в десяти чатах.</p>
+          <div class="pain__item">
+            <p>«Сайт вроде есть, но клиенты пишут „не дозвонился“ и уходят к конкурентам.»</p>
+          </div>
+          <div class="pain__item">
+            <p>«Заявки тонут в переписках: пока ответили — клиент уже купил у других.»</p>
           </div>
         </div>
+        <p class="pain__close reveal">Если кивнули хотя бы дважды — <a href="#how">мы знаем, что с этим делать</a>.</p>
       </div>
     </section>
 
@@ -304,18 +347,22 @@
         <div class="steps__track reveal">
           <article class="step">
             <h3>Бриф и оценка</h3>
+            <p class="step__time">1–2 дня</p>
             <p>Разбираем ваш бизнес, город и задачу. Называем вилку по стоимости и срокам — бесплатно.</p>
           </article>
           <article class="step">
             <h3>Сайт и бот</h3>
+            <p class="step__time">2–3 недели</p>
             <p>Собираем лендинг под оффер и Telegram-бота для приёма заявок, FAQ и уведомлений.</p>
           </article>
           <article class="step">
-            <h3>Директ</h3>
+            <h3>Запуск Директа</h3>
+            <p class="step__time">3–5 дней</p>
             <p>Настраиваем рекламу в Яндексе: подбираем запросы, пишем объявления, подключаем аналитику.</p>
           </article>
           <article class="step">
             <h3>Заявки и данные</h3>
+            <p class="step__time">с первой недели рекламы</p>
             <p>Заявки приходят вам в Telegram или CRM. Видно, сколько стоит каждая заявка и какая реклама окупается.</p>
           </article>
         </div>
@@ -371,7 +418,7 @@
       <div class="wrap">
         <div class="section-head reveal">
           <h2 id="packages-title">Готовые связки — выгоднее по отдельности</h2>
-          <p>Два пакета для быстрого запуска воронки. Подходят под тест модели на Директе.</p>
+          <p>Три пакета: от быстрого теста спроса до связки с ростом на данных.</p>
         </div>
         <div class="packages__grid reveal">
           <article class="pack">
@@ -388,10 +435,11 @@
                 <div class="pack__price">от 42 000 ₽</div>
                 <div class="pack__save">выгода 6 000 ₽</div>
               </div>
-              <a class="btn btn--ghost" href="#lead">Запросить</a>
+              <a class="btn btn--ghost" href="?offer=funnel#lead">Запросить</a>
             </div>
           </article>
           <article class="pack pack--featured">
+            <div class="pack__badge">Выбирают чаще всего</div>
             <div class="pack__label">Главный оффер</div>
             <h3>Под ключ</h3>
             <p class="pack__desc">Лендинг + бот + Яндекс.Директ: реклама ведёт на готовую воронку. То, с чего начинаем поток лидов.</p>
@@ -406,7 +454,25 @@
                 <div class="pack__price">от 58 000 ₽</div>
                 <div class="pack__save">выгода 10 000 ₽</div>
               </div>
-              <a class="btn btn--primary" href="#lead">Обсудить под ключ</a>
+              <a class="btn btn--primary" href="?offer=turnkey#lead">Обсудить под ключ</a>
+            </div>
+          </article>
+          <article class="pack">
+            <div class="pack__label">Ретейнер</div>
+            <h3>Под ключ + рост</h3>
+            <p class="pack__desc">Всё из «Под ключ» плюс SEO, ведение Директа 3 месяца и правки по данным Метрики.</p>
+            <ul>
+              <li>Всё из пакета «Под ключ»</li>
+              <li>SEO-оптимизация посадочной</li>
+              <li>Ведение Директа 3 месяца</li>
+              <li>Правки по данным Метрики</li>
+            </ul>
+            <div class="pack__foot">
+              <div>
+                <div class="pack__price">от 90 000 ₽</div>
+                <div class="pack__save">запуск + 3 мес. роста</div>
+              </div>
+              <a class="btn btn--ghost" href="?offer=growth#lead">Запросить</a>
             </div>
           </article>
         </div>
@@ -460,6 +526,16 @@
             </div>
           </div>
         </div>
+        <div class="guarantees reveal">
+          <h3 class="guarantees__title">Гарантии</h3>
+          <ul class="guarantees__list">
+            <li>Договор через ИП — официально, с закрывающими документами</li>
+            <li>Поэтапная оплата: 50% старт / 50% после сдачи</li>
+            <li>Стоимость фиксируется до старта и не растёт по ходу</li>
+            <li>Сроки прописаны в договоре</li>
+            <li>Правки на этапе макета — без ограничений</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -484,6 +560,14 @@
             <p>Нет. Оплата настройки и ведения — нам, бюджет на показы — в кабинете Яндекса отдельно. Ведение: фикс от 15 000 ₽/мес или 10–15% от бюджета — что больше.</p>
           </details>
           <details>
+            <summary>Сколько закладывать на рекламный бюджет?</summary>
+            <p>Зависит от региона и ниши. Тестовый бюджет обычно от 20–30 тыс. ₽/мес. Бюджет платится напрямую Яндексу, не нам.</p>
+          </details>
+          <details>
+            <summary>Что если реклама не окупится?</summary>
+            <p>Гарантировать продажи не может никто. Но тест на данных за 2–4 недели покажет стоимость заявки — дальше решение по цифрам, а не по обещаниям.</p>
+          </details>
+          <details>
             <summary>Работаете только с Москвой?</summary>
             <p>Нет, работаем по всей России удалённо. Рекламу настраиваем на ваш город или на регионы, где есть ваши клиенты.</p>
           </details>
@@ -501,12 +585,17 @@
         <div class="lead__panel reveal">
           <div class="lead__copy">
             <h2 id="lead-title">Обсудим задачу и дадим оценку</h2>
-            <p>Опишите нишу и что нужно на выходе — лендинг, бот, Директ или всё сразу. Ответим в Telegram или перезвоним.</p>
+            <p>Оставьте имя и контакт — ответим в Telegram или перезвоним. Нишу и детали уточним на созвоне.</p>
             <div class="lead__contacts">
               <div>
                 Telegram:
                 <a href="https://t.me/n9dmitry" target="_blank" rel="noopener noreferrer" data-goal="telegram_click">@n9dmitry</a>
               </div>
+              <!-- Демо-бот (Дмитрий): подставить URL и раскомментировать
+              <div>
+                <a class="btn btn--ghost" href="https://t.me/XXXX" target="_blank" rel="noopener noreferrer" data-goal="demo_bot_click">Потыкать демо-бота</a>
+              </div>
+              -->
               <!-- Телефон добавим, когда будет номер (колтрекинг / номер Виктора):
               <div class="phone-placeholder">Телефон: <strong data-calltracking-number></strong></div> -->
             </div>
@@ -530,18 +619,16 @@
                 <select id="package" name="package">
                   <option value="turnkey">Под ключ (лендинг + бот + Директ)</option>
                   <option value="funnel">Бот + воронка</option>
+                  <option value="growth">Под ключ + рост</option>
+                  <option value="audit">Бесплатный аудит рекламы/сайта</option>
                   <option value="bot">Telegram-бот</option>
                   <option value="site">Лендинг / сайт</option>
                   <option value="direct">Яндекс.Директ</option>
                   <option value="other">Другое / автоматизация</option>
                 </select>
               </div>
-              <div class="field">
-                <label for="task">Задача</label>
-                <textarea id="task" name="task" placeholder="Ниша, регион, что нужно получить"></textarea>
-              </div>
               <button class="btn btn--primary" type="submit" data-goal="lead_submit">Отправить заявку</button>
-              <p class="form__hint">Нажимая кнопку, вы соглашаетесь на обработку контактных данных, чтобы мы могли ответить по заявке.</p>
+              <p class="form__hint">Нажимая кнопку, вы соглашаетесь на <a href="privacy.html">обработку персональных данных</a>, чтобы мы могли ответить по заявке.</p>
             </div>
           </form>
         </div>
@@ -549,12 +636,15 @@
     </section>
   </main>
 
+  <a class="sticky-cta" id="sticky-cta" href="#lead" hidden>Получить оценку</a>
+
   <footer>
     <div class="wrap footer__inner">
       <div class="footer__brand">Веб-Кузница: разработка и маркетинг</div>
       <div>Python · боты · сайты · Директ · по России</div>
-      <div>
+      <div class="footer__links">
         <a href="https://t.me/n9dmitry" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="privacy.html">Политика данных</a>
       </div>
     </div>
   </footer>
