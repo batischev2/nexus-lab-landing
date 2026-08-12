@@ -3,34 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Веб-Кузница: разработка и маркетинг — сайт, бот и реклама под ключ</title>
+  <title>Лидогенераторная: разработка и маркетинг — сайт, бот и реклама под ключ</title>
   <meta name="description" content="Продающий сайт или лендинг, реклама в Яндексе и SEO-продвижение под ключ. Настраиваем всё так, чтобы реклама приносила заявки, а не просто клики. Работаем по всей России.">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#0a0d11">
+  <meta name="theme-color" content="#0a0d11" id="theme-color">
   <link rel="canonical" href="https://nexus-lab-landing.vercel.app/">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/favicon.svg">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var theme = stored === "light" || stored === "dark"
+          ? stored
+          : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+        var meta = document.getElementById("theme-color");
+        if (meta) meta.setAttribute("content", theme === "light" ? "#f3f6f9" : "#0a0d11");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+      try {
+        var lang = localStorage.getItem("lang");
+        if (lang === "en" || lang === "ru") document.documentElement.setAttribute("lang", lang);
+      } catch (e2) {}
+    })();
+  </script>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="Веб-Кузница">
+  <meta property="og:site_name" content="Лидогенераторная">
   <meta property="og:url" content="https://nexus-lab-landing.vercel.app/">
-  <meta property="og:title" content="Веб-Кузница: сайт, бот и реклама под ключ">
+  <meta property="og:title" content="Лидогенераторная: сайт, бот и реклама под ключ">
   <meta property="og:description" content="Продающий лендинг, Telegram-бот и Яндекс.Директ — под ключ. Реклама приводит заявки, а не просто клики. Работаем по всей России.">
   <meta property="og:image" content="https://nexus-lab-landing.vercel.app/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Веб-Кузница — сайт, бот и реклама под ключ">
+  <meta property="og:image:alt" content="Лидогенераторная — сайт, бот и реклама под ключ">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Веб-Кузница: сайт, бот и реклама под ключ">
+  <meta name="twitter:title" content="Лидогенераторная: сайт, бот и реклама под ключ">
   <meta name="twitter:description" content="Продающий лендинг, Telegram-бот и Яндекс.Директ — под ключ. Работаем по всей России.">
   <meta name="twitter:image" content="https://nexus-lab-landing.vercel.app/img/og-image.jpg">
 
-  <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/golos-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style/index.css">
 
   <script type="application/ld+json">
@@ -40,7 +58,7 @@
       {
         "@type": "Organization",
         "@id": "https://nexus-lab-landing.vercel.app/#organization",
-        "name": "Веб-Кузница",
+        "name": "Лидогенераторная",
         "url": "https://nexus-lab-landing.vercel.app/",
         "logo": "https://nexus-lab-landing.vercel.app/img/favicon.svg",
         "description": "Разработка сайтов и лендингов, Telegram-ботов, автоматизация и реклама в Яндекс.Директе под ключ.",
@@ -57,7 +75,7 @@
         "@type": "WebSite",
         "@id": "https://nexus-lab-landing.vercel.app/#website",
         "url": "https://nexus-lab-landing.vercel.app/",
-        "name": "Веб-Кузница",
+        "name": "Лидогенераторная",
         "description": "Продающий сайт или лендинг, реклама в Яндексе и SEO-продвижение под ключ.",
         "publisher": { "@id": "https://nexus-lab-landing.vercel.app/#organization" },
         "inLanguage": "ru-RU"
@@ -66,7 +84,7 @@
         "@type": "WebPage",
         "@id": "https://nexus-lab-landing.vercel.app/#webpage",
         "url": "https://nexus-lab-landing.vercel.app/",
-        "name": "Веб-Кузница: разработка и маркетинг — сайт, бот и реклама под ключ",
+        "name": "Лидогенераторная: разработка и маркетинг — сайт, бот и реклама под ключ",
         "isPartOf": { "@id": "https://nexus-lab-landing.vercel.app/#website" },
         "about": { "@id": "https://nexus-lab-landing.vercel.app/#organization" },
         "description": "Продающий сайт или лендинг, реклама в Яндексе и SEO-продвижение под ключ. Настраиваем всё так, чтобы реклама приносила заявки, а не просто клики.",
@@ -75,7 +93,7 @@
       {
         "@type": "ProfessionalService",
         "@id": "https://nexus-lab-landing.vercel.app/#service",
-        "name": "Веб-Кузница",
+        "name": "Лидогенераторная",
         "url": "https://nexus-lab-landing.vercel.app/",
         "image": "https://nexus-lab-landing.vercel.app/img/og-image.jpg",
         "description": "Лендинги, Telegram-боты, автоматизация и Яндекс.Директ под ключ для малого и среднего бизнеса по всей России.",
@@ -87,7 +105,7 @@
         "priceRange": "₽₽",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Услуги Веб-Кузница",
+          "name": "Услуги Лидогенераторной",
           "itemListElement": [
             {
               "@type": "Offer",
@@ -228,17 +246,34 @@
 
   <header class="nav" id="nav">
     <div class="wrap nav__inner">
-      <a class="logo" href="#top" aria-label="Веб-Кузница — наверх">
+      <a class="logo" href="#top" data-i18n-aria="logo.aria" aria-label="Лидогенераторная — наверх">
         <span class="logo__mark" aria-hidden="true"></span>
-        Веб-Кузница
+        <span class="logo__text">Лидогенераторная</span>
       </a>
-      <nav class="nav__links" aria-label="Разделы">
-        <a href="#how">Как работает</a>
-        <a href="#services">Услуги</a>
-        <a href="#packages">Пакеты</a>
-        <a href="#faq">FAQ</a>
+      <nav class="nav__links" data-i18n-aria="nav.aria" aria-label="Разделы">
+        <a href="#how" data-i18n="nav.how">Как работает</a>
+        <a href="#services" data-i18n="nav.services">Услуги</a>
+        <a href="#packages" data-i18n="nav.packages">Пакеты</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
       </nav>
-      <a class="nav__cta" href="#lead">Обсудить проект</a>
+      <div class="nav__actions">
+        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch to English" aria-pressed="false">
+          <span data-lang-label>EN</span>
+        </button>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Переключить тему">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"/>
+          </svg>
+        </button>
+        <a class="nav__cta" href="#audit">
+          <span class="nav__cta-full" data-i18n="nav.cta">Бесплатный аудит</span>
+          <span class="nav__cta-short" data-i18n="nav.ctaShort">Аудит</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -285,53 +320,53 @@
 
           <g class="flow-card flow-card--1">
             <rect x="10" y="10" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)"/>
-            <text x="85" y="46" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">САЙТ / ЛЕНДИНГ</text>
-            <text x="85" y="70" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Разработка</text>
+            <text x="85" y="46" text-anchor="middle" fill="#9aa6b5" font-family="Golos Text,sans-serif" font-size="11" letter-spacing="1.5" data-i18n="flow.s1">САЙТ / ЛЕНДИНГ</text>
+            <text x="85" y="70" text-anchor="middle" fill="#eef2f6" font-family="Golos Text,sans-serif" font-size="15" font-weight="600" data-i18n="flow.t1">Разработка</text>
           </g>
 
           <g class="flow-card flow-card--2">
             <rect x="105" y="145" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)"/>
-            <text x="180" y="181" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ДИРЕКТ + SEO</text>
-            <text x="180" y="205" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Трафик</text>
+            <text x="180" y="181" text-anchor="middle" fill="#9aa6b5" font-family="Golos Text,sans-serif" font-size="11" letter-spacing="1.5" data-i18n="flow.s2">ДИРЕКТ + SEO</text>
+            <text x="180" y="205" text-anchor="middle" fill="#eef2f6" font-family="Golos Text,sans-serif" font-size="15" font-weight="600" data-i18n="flow.t2">Трафик</text>
           </g>
 
           <g class="flow-card flow-card--3">
             <rect x="200" y="280" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)"/>
-            <text x="275" y="316" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ПОСЕТИТЕЛИ</text>
-            <text x="275" y="340" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Конверсия</text>
+            <text x="275" y="316" text-anchor="middle" fill="#9aa6b5" font-family="Golos Text,sans-serif" font-size="11" letter-spacing="1.5" data-i18n="flow.s3">ПОСЕТИТЕЛИ</text>
+            <text x="275" y="340" text-anchor="middle" fill="#eef2f6" font-family="Golos Text,sans-serif" font-size="15" font-weight="600" data-i18n="flow.t3">Конверсия</text>
           </g>
 
           <g class="flow-card flow-card--4">
             <rect x="295" y="415" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.5)" stroke-width="1.2" fill="rgba(18,23,30,0.96)"/>
-            <text x="370" y="451" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">TELEGRAM / CRM</text>
-            <text x="370" y="475" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Заявки</text>
+            <text x="370" y="451" text-anchor="middle" fill="#9aa6b5" font-family="Golos Text,sans-serif" font-size="11" letter-spacing="1.5" data-i18n="flow.s4">TELEGRAM / CRM</text>
+            <text x="370" y="475" text-anchor="middle" fill="#eef2f6" font-family="Golos Text,sans-serif" font-size="15" font-weight="600" data-i18n="flow.t4">Заявки</text>
           </g>
 
           <g class="flow-card flow-card--5">
             <rect x="390" y="550" width="150" height="84" rx="12" stroke="rgba(30,200,192,0.65)" stroke-width="1.5" fill="rgba(18,23,30,0.96)"/>
-            <text x="465" y="586" text-anchor="middle" fill="#9aa6b5" font-family="Manrope,sans-serif" font-size="11" letter-spacing="1.5">ВАШ БИЗНЕС</text>
-            <text x="465" y="610" text-anchor="middle" fill="#eef2f6" font-family="Unbounded,sans-serif" font-size="15" font-weight="600">Рост прибыли</text>
+            <text x="465" y="586" text-anchor="middle" fill="#9aa6b5" font-family="Golos Text,sans-serif" font-size="11" letter-spacing="1.5" data-i18n="flow.s5">ВАШ БИЗНЕС</text>
+            <text x="465" y="610" text-anchor="middle" fill="#eef2f6" font-family="Golos Text,sans-serif" font-size="15" font-weight="600" data-i18n="flow.t5">Рост прибыли</text>
           </g>
         </svg>
       </div>
 
       <div class="hero__content">
-        <p class="hero__eyebrow">Веб-Кузница: разработка и маркетинг</p>
-        <h1 id="hero-title">Чтобы реклама приводила клиентов, а не съедала бюджет</h1>
-        <p class="hero__lead">
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Лидогенераторная: разработка и маркетинг</p>
+        <h1 id="hero-title" data-i18n="hero.title">Чтобы реклама приводила клиентов, а не съедала бюджет</h1>
+        <p class="hero__lead" data-i18n="hero.lead">
           Сделаем продающий сайт или лендинг, настроим рекламу в Яндексе и SEO-продвижение — под ключ. Реклама приводит людей на вашу страницу, а каждая заявка с неё сразу попадает к вам — ни один клиент не теряется.
         </p>
         <div class="hero__flow-mini" aria-hidden="true">
           <span>Разработка</span><i>→</i><span>Трафик</span><i>→</i><span>Конверсия</span><i>→</i><span>Заявки</span><i>→</i><span>Рост прибыли</span>
         </div>
         <div class="btn-row">
-          <a class="btn btn--primary" href="#lead">Получить оценку</a>
-          <a class="btn btn--ghost" href="#packages">Смотреть пакеты</a>
+          <a class="btn btn--primary" href="#audit" data-i18n="hero.ctaAudit">Бесплатный аудит</a>
+          <a class="btn btn--ghost" href="#packages" data-i18n="hero.ctaPackages">Смотреть пакеты</a>
         </div>
         <div class="hero__meta">
-          <span><i class="dot" aria-hidden="true"></i> Работаем по всей России</span>
-          <span><i class="dot" aria-hidden="true"></i> Запуск за 2–4 недели</span>
-          <span><i class="dot" aria-hidden="true"></i> Оценка задачи — бесплатно</span>
+          <span><i class="dot" aria-hidden="true"></i> <span data-i18n="hero.meta1">Работаем по всей России</span></span>
+          <span><i class="dot" aria-hidden="true"></i> <span data-i18n="hero.meta2">Запуск за 2–4 недели</span></span>
+          <span><i class="dot" aria-hidden="true"></i> <span data-i18n="hero.meta3">Аудит рекламы — бесплатно</span></span>
         </div>
       </div>
       </div>
@@ -341,37 +376,56 @@
     <section class="audit" id="audit" aria-labelledby="audit-title">
       <div class="wrap">
         <div class="audit__panel reveal">
-          <div class="audit__copy">
-            <h2 id="audit-title">Уже льёте рекламу, а заявок мало? Разберём бесплатно</h2>
-            <p>Пришлите ссылку на сайт или кабинет — покажем 3–5 мест, куда утекает бюджет. Без обязательств, аудит остаётся у вас в любом случае.</p>
+          <p class="audit__badge" data-i18n="audit.badge">Бесплатный аудит</p>
+          <div class="audit__row">
+            <div class="audit__copy">
+              <h2 id="audit-title" data-i18n="audit.title">Уже льёте рекламу, а заявок мало? Разберём бесплатно</h2>
+              <p data-i18n="audit.text">Пришлите ссылку на сайт или кабинет — покажем 3–5 мест, куда утекает бюджет. Без обязательств, аудит остаётся у вас в любом случае.</p>
+            </div>
+            <a class="btn btn--primary" href="?offer=audit#lead" data-goal="audit_cta" data-i18n="audit.cta">Получить бесплатный аудит</a>
           </div>
-          <a class="btn btn--primary" href="?offer=audit#lead">Получить бесплатный аудит</a>
         </div>
       </div>
     </section>
 
-    <!-- PAIN -->
-    <section class="pain" id="pain" aria-labelledby="pain-title">
+    <!-- VALUE: что делаем / боли / как решаем / почему мы -->
+    <section class="value" id="pain" aria-labelledby="pain-title">
       <div class="wrap">
-        <div class="section-head reveal">
-          <h2 id="pain-title">Знакомо?</h2>
-          <p>Типичные симптомы, когда реклама и сайт есть, а клиентов — нет.</p>
+        <div class="value__panel reveal">
+          <p class="value__badge" data-i18n="pain.badge">Для вашего бизнеса</p>
+          <div class="value__head">
+            <h2 id="pain-title" data-i18n="pain.title">От кликов — к заявкам, которые доходят до вас</h2>
+            <p data-i18n="pain.lead">Связка сайт + реклама + обработка лида. Ниже — зачем это нужно и как мы это собираем.</p>
+          </div>
+          <div class="value__grid">
+            <article class="value__col">
+              <span class="value__num" aria-hidden="true">01</span>
+              <h3 data-i18n="pain.do.t">Что делаем</h3>
+              <p data-i18n="pain.do.p">Собираем продающую страницу, Telegram-бота и рекламу в Яндексе так, чтобы трафик превращался в заявки, а заявки сразу попадали к вам.</p>
+            </article>
+            <article class="value__col">
+              <span class="value__num" aria-hidden="true">02</span>
+              <h3 data-i18n="pain.pain.t">Ваши боли</h3>
+              <ul class="value__list">
+                <li data-i18n="pain.pain.1">Клики есть — заявок мало</li>
+                <li data-i18n="pain.pain.2">Бюджет уходит без понятной отдачи</li>
+                <li data-i18n="pain.pain.3">Сайт или подрядчик «есть», результата нет</li>
+                <li data-i18n="pain.pain.4">Лиды теряются в переписке</li>
+              </ul>
+            </article>
+            <article class="value__col">
+              <span class="value__num" aria-hidden="true">03</span>
+              <h3 data-i18n="pain.solve.t">Как решаем</h3>
+              <p data-i18n="pain.solve.p">Оффер и страница под рекламу, бот для приёма заявок, Директ с аналитикой. Запускаем → смотрим цифры → усиливаем то, что приводит клиентов.</p>
+            </article>
+            <article class="value__col">
+              <span class="value__num" aria-hidden="true">04</span>
+              <h3 data-i18n="pain.why.t">Почему мы</h3>
+              <p data-i18n="pain.why.p">Два партнёра без агентской прослойки: код, SEO и Директ в одних руках. Фиксируем цену и сроки до старта, работаем по всей России.</p>
+            </article>
+          </div>
+          <p class="value__foot" data-i18n-html="pain.close">Дальше — <a href="#how">как устроена связка по шагам</a> и готовые пакеты.</p>
         </div>
-        <div class="pain__list reveal">
-          <div class="pain__item">
-            <p>«Клики есть — заявок нет. Бюджет уходит, телефон молчит.»</p>
-          </div>
-          <div class="pain__item">
-            <p>«Подрядчик присылает красивые отчёты, но продаж с них не видно.»</p>
-          </div>
-          <div class="pain__item">
-            <p>«Сайт вроде есть, но клиенты пишут „не дозвонился“ и уходят к конкурентам.»</p>
-          </div>
-          <div class="pain__item">
-            <p>«Заявки тонут в переписках: пока ответили — клиент уже купил у других.»</p>
-          </div>
-        </div>
-        <p class="pain__close reveal">Если кивнули хотя бы дважды — <a href="#how">мы знаем, что с этим делать</a>.</p>
       </div>
     </section>
 
@@ -379,29 +433,29 @@
     <section id="how" aria-labelledby="how-title">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2 id="how-title">Как работает связка</h2>
-          <p>От первого разговора до потока заявок — четыре шага. Сначала запускаем, потом усиливаем то, что реально приводит клиентов.</p>
+          <h2 id="how-title" data-i18n="how.title">Как работает связка</h2>
+          <p data-i18n="how.lead">От первого разговора до потока заявок — четыре шага. Сначала запускаем, потом усиливаем то, что реально приводит клиентов.</p>
         </div>
         <div class="steps__track reveal">
           <article class="step">
-            <h3>Бриф и оценка</h3>
-            <p class="step__time">1–2 дня</p>
-            <p>Разбираем ваш бизнес, город и задачу. Называем вилку по стоимости и срокам — бесплатно.</p>
+            <h3 data-i18n="how.1.t">Бриф и оценка</h3>
+            <p class="step__time" data-i18n="how.1.time">1–2 дня</p>
+            <p data-i18n="how.1.p">Разбираем ваш бизнес, город и задачу. Называем вилку по стоимости и срокам — бесплатно.</p>
           </article>
           <article class="step">
-            <h3>Сайт и бот</h3>
-            <p class="step__time">2–3 недели</p>
-            <p>Собираем лендинг под оффер и Telegram-бота для приёма заявок, FAQ и уведомлений.</p>
+            <h3 data-i18n="how.2.t">Сайт и бот</h3>
+            <p class="step__time" data-i18n="how.2.time">2–3 недели</p>
+            <p data-i18n="how.2.p">Собираем лендинг под оффер и Telegram-бота для приёма заявок, FAQ и уведомлений.</p>
           </article>
           <article class="step">
-            <h3>Запуск Директа</h3>
-            <p class="step__time">3–5 дней</p>
-            <p>Настраиваем рекламу в Яндексе: подбираем запросы, пишем объявления, подключаем аналитику.</p>
+            <h3 data-i18n="how.3.t">Запуск Директа</h3>
+            <p class="step__time" data-i18n="how.3.time">3–5 дней</p>
+            <p data-i18n="how.3.p">Настраиваем рекламу в Яндексе: подбираем запросы, пишем объявления, подключаем аналитику.</p>
           </article>
           <article class="step">
-            <h3>Заявки и данные</h3>
-            <p class="step__time">с первой недели рекламы</p>
-            <p>Заявки приходят вам в Telegram или CRM. Видно, сколько стоит каждая заявка и какая реклама окупается.</p>
+            <h3 data-i18n="how.4.t">Заявки и данные</h3>
+            <p class="step__time" data-i18n="how.4.time">с первой недели рекламы</p>
+            <p data-i18n="how.4.p">Заявки приходят вам в Telegram или CRM. Видно, сколько стоит каждая заявка и какая реклама окупается.</p>
           </article>
         </div>
       </div>
@@ -411,41 +465,41 @@
     <section class="services" id="services" aria-labelledby="services-title">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2 id="services-title">Что делаем</h2>
-          <p>Цены «от» — стартовые ориентиры. Точную стоимость назовём после того, как обсудим вашу задачу.</p>
+          <h2 id="services-title" data-i18n="services.title">Что делаем</h2>
+          <p data-i18n="services.lead">Цены «от» — стартовые ориентиры. Точную стоимость назовём после того, как обсудим вашу задачу.</p>
         </div>
         <div class="services__grid reveal">
           <article class="service">
             <div class="service__top">
-              <h3>Telegram-боты</h3>
-              <span class="service__price">от 16 000 ₽</span>
+              <h3 data-i18n="svc.1.t">Telegram-боты</h3>
+              <span class="service__price" data-i18n="svc.1.price">от 16 000 ₽</span>
             </div>
-            <p>Приём заявок, меню, FAQ, интеграции с CRM и оплатой, сценарии и AI.</p>
-            <span class="service__note">Старт · с интеграциями · сложная логика</span>
+            <p data-i18n="svc.1.p">Приём заявок, меню, FAQ, интеграции с CRM и оплатой, сценарии и AI.</p>
+            <span class="service__note" data-i18n="svc.1.note">Старт · с интеграциями · сложная логика</span>
           </article>
           <article class="service">
             <div class="service__top">
-              <h3>Лендинги и сайты</h3>
-              <span class="service__price">от 12 000 ₽</span>
+              <h3 data-i18n="svc.2.t">Лендинги и сайты</h3>
+              <span class="service__price" data-i18n="svc.2.price">от 12 000 ₽</span>
             </div>
-            <p>Одностраничники под рекламу, бизнес-сайты, веб-сервисы и личные кабинеты.</p>
-            <span class="service__note">Адаптив · форма · аналитика · CMS / API</span>
+            <p data-i18n="svc.2.p">Одностраничники под рекламу, бизнес-сайты, веб-сервисы и личные кабинеты.</p>
+            <span class="service__note" data-i18n="svc.2.note">Адаптив · форма · аналитика · CMS / API</span>
           </article>
           <article class="service">
             <div class="service__top">
-              <h3>Автоматизация и парсеры</h3>
-              <span class="service__price">от 10 000 ₽</span>
+              <h3 data-i18n="svc.3.t">Автоматизация и парсеры</h3>
+              <span class="service__price" data-i18n="svc.3.price">от 10 000 ₽</span>
             </div>
-            <p>Выгрузки, отчёты, интеграции сервисов, парсинг источников по расписанию.</p>
-            <span class="service__note">Excel / БД · антибот · сопровождение</span>
+            <p data-i18n="svc.3.p">Выгрузки, отчёты, интеграции сервисов, парсинг источников по расписанию.</p>
+            <span class="service__note" data-i18n="svc.3.note">Excel / БД · антибот · сопровождение</span>
           </article>
           <article class="service">
             <div class="service__top">
-              <h3>Яндекс.Директ</h3>
-              <span class="service__price">от 5 000 ₽</span>
+              <h3 data-i18n="svc.4.t">Яндекс.Директ</h3>
+              <span class="service__price" data-i18n="svc.4.price">от 5 000 ₽</span>
             </div>
-            <p>Аудит, настройка Поиска и РСЯ, ведение и оптимизация. Рекламный бюджет — отдельно.</p>
-            <span class="service__note">Ведение от 15 000 ₽/мес или % от бюджета</span>
+            <p data-i18n="svc.4.p">Аудит, настройка Поиска и РСЯ, ведение и оптимизация. Рекламный бюджет — отдельно.</p>
+            <span class="service__note" data-i18n="svc.4.note">Ведение от 15 000 ₽/мес или % от бюджета</span>
           </article>
         </div>
       </div>
@@ -455,62 +509,62 @@
     <section id="packages" aria-labelledby="packages-title">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2 id="packages-title">Готовые связки — выгоднее по отдельности</h2>
-          <p>Три пакета: от быстрого теста спроса до связки с ростом на данных.</p>
+          <h2 id="packages-title" data-i18n="packages.title">Готовые связки — выгоднее по отдельности</h2>
+          <p data-i18n="packages.lead">Три пакета: от быстрого теста спроса до связки с ростом на данных.</p>
         </div>
         <div class="packages__grid reveal">
           <article class="pack">
-            <div class="pack__label">Связка</div>
-            <h3>Бот + воронка</h3>
-            <p class="pack__desc">Лендинг для приёма трафика и Telegram-бот для заявок. База, с которой уже можно тестировать спрос.</p>
+            <div class="pack__label" data-i18n="pack.1.label">Связка</div>
+            <h3 data-i18n="pack.1.t">Бот + воронка</h3>
+            <p class="pack__desc" data-i18n="pack.1.desc">Лендинг для приёма трафика и Telegram-бот для заявок. База, с которой уже можно тестировать спрос.</p>
             <ul>
-              <li>Лендинг с формой и аналитикой</li>
-              <li>Бот: заявки, меню, уведомления</li>
-              <li>Связка трафик → лид в Telegram</li>
+              <li data-i18n="pack.1.li1">Лендинг с формой и аналитикой</li>
+              <li data-i18n="pack.1.li2">Бот: заявки, меню, уведомления</li>
+              <li data-i18n="pack.1.li3">Связка трафик → лид в Telegram</li>
             </ul>
             <div class="pack__foot">
               <div>
-                <div class="pack__price">от 42 000 ₽</div>
-                <div class="pack__save">выгода 6 000 ₽</div>
+                <div class="pack__price" data-i18n="pack.1.price">от 42 000 ₽</div>
+                <div class="pack__save" data-i18n="pack.1.save">выгода 6 000 ₽</div>
               </div>
-              <a class="btn btn--ghost" href="?offer=funnel#lead">Запросить</a>
+              <a class="btn btn--ghost" href="?offer=funnel#lead" data-i18n="pack.1.cta">Запросить</a>
             </div>
           </article>
           <article class="pack pack--featured">
-            <div class="pack__badge">Выбирают чаще всего</div>
-            <div class="pack__label">Главный оффер</div>
-            <h3>Под ключ</h3>
-            <p class="pack__desc">Лендинг + бот + Яндекс.Директ: реклама ведёт на готовую воронку. То, с чего начинаем поток лидов.</p>
+            <div class="pack__badge" data-i18n="pack.2.badge">Выбирают чаще всего</div>
+            <div class="pack__label" data-i18n="pack.2.label">Главный оффер</div>
+            <h3 data-i18n="pack.2.t">Под ключ</h3>
+            <p class="pack__desc" data-i18n="pack.2.desc">Лендинг + бот + Яндекс.Директ: реклама ведёт на готовую воронку. То, с чего начинаем поток лидов.</p>
             <ul>
-              <li>Всё из пакета «Бот + воронка»</li>
-              <li>Настройка кампании в Директе</li>
-              <li>Цели в Метрике, запуск под гео</li>
-              <li>Готовы к A/B офферов и ключей</li>
+              <li data-i18n="pack.2.li1">Всё из пакета «Бот + воронка»</li>
+              <li data-i18n="pack.2.li2">Настройка кампании в Директе</li>
+              <li data-i18n="pack.2.li3">Цели в Метрике, запуск под гео</li>
+              <li data-i18n="pack.2.li4">Готовы к A/B офферов и ключей</li>
             </ul>
             <div class="pack__foot">
               <div>
-                <div class="pack__price">от 58 000 ₽</div>
-                <div class="pack__save">выгода 10 000 ₽</div>
+                <div class="pack__price" data-i18n="pack.2.price">от 58 000 ₽</div>
+                <div class="pack__save" data-i18n="pack.2.save">выгода 10 000 ₽</div>
               </div>
-              <a class="btn btn--primary" href="?offer=turnkey#lead">Обсудить под ключ</a>
+              <a class="btn btn--primary" href="?offer=turnkey#lead" data-i18n="pack.2.cta">Обсудить под ключ</a>
             </div>
           </article>
           <article class="pack">
-            <div class="pack__label">Ретейнер</div>
-            <h3>Под ключ + рост</h3>
-            <p class="pack__desc">Всё из «Под ключ» плюс SEO, ведение Директа 3 месяца и правки по данным Метрики.</p>
+            <div class="pack__label" data-i18n="pack.3.label">Ретейнер</div>
+            <h3 data-i18n="pack.3.t">Под ключ + рост</h3>
+            <p class="pack__desc" data-i18n="pack.3.desc">Всё из «Под ключ» плюс SEO, ведение Директа 3 месяца и правки по данным Метрики.</p>
             <ul>
-              <li>Всё из пакета «Под ключ»</li>
-              <li>SEO-оптимизация посадочной</li>
-              <li>Ведение Директа 3 месяца</li>
-              <li>Правки по данным Метрики</li>
+              <li data-i18n="pack.3.li1">Всё из пакета «Под ключ»</li>
+              <li data-i18n="pack.3.li2">SEO-оптимизация посадочной</li>
+              <li data-i18n="pack.3.li3">Ведение Директа 3 месяца</li>
+              <li data-i18n="pack.3.li4">Правки по данным Метрики</li>
             </ul>
             <div class="pack__foot">
               <div>
-                <div class="pack__price">от 90 000 ₽</div>
-                <div class="pack__save">запуск + 3 мес. роста</div>
+                <div class="pack__price" data-i18n="pack.3.price">от 90 000 ₽</div>
+                <div class="pack__save" data-i18n="pack.3.save">запуск + 3 мес. роста</div>
               </div>
-              <a class="btn btn--ghost" href="?offer=growth#lead">Запросить</a>
+              <a class="btn btn--ghost" href="?offer=growth#lead" data-i18n="pack.3.cta">Запросить</a>
             </div>
           </article>
         </div>
@@ -521,57 +575,57 @@
     <section id="why" aria-labelledby="why-title">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2 id="why-title">Почему мы</h2>
-          <p>Два партнёра — полный цикл от кода и рекламы до разбора звонков и продаж.</p>
+          <h2 id="why-title" data-i18n="why.title">Почему мы</h2>
+          <p data-i18n="why.lead">Два партнёра — полный цикл от кода и рекламы до разбора звонков и продаж.</p>
         </div>
         <div class="why__grid reveal">
           <div class="why__story">
-            <h3>Небольшая команда вместо агентства</h3>
-            <p>Вы общаетесь напрямую с теми, кто делает работу — без менеджеров-посредников и агентской наценки. Начинаем с малого: запускаем, смотрим на заявки и усиливаем то, что работает.</p>
+            <h3 data-i18n="why.story.t">Небольшая команда вместо агентства</h3>
+            <p data-i18n="why.story.p">Вы общаетесь напрямую с теми, кто делает работу — без менеджеров-посредников и агентской наценки. Начинаем с малого: запускаем, смотрим на заявки и усиливаем то, что работает.</p>
             <div class="partners">
               <div class="partner">
                 <div class="partner__avatar">
-                  <img src="img/viktor.jpg" alt="Виктор — фронтенд-разработчик и SEO-специалист" width="64" height="64" loading="lazy" decoding="async" onerror="this.remove()">В
+                  <img src="img/viktor.jpg" data-i18n-alt="why.v.alt" alt="Виктор — фронтенд-разработчик и SEO-специалист" width="64" height="64" loading="lazy" decoding="async" onerror="this.remove()">В
                 </div>
                 <div>
                   <strong>Виктор</strong>
-                  <span>Фронтенд-разработчик · SEO-специалист</span>
+                  <span data-i18n="why.v.role">Фронтенд-разработчик · SEO-специалист</span>
                 </div>
               </div>
               <div class="partner">
                 <div class="partner__avatar">
-                  <img src="img/dmitry.jpg" alt="Дмитрий — бэкенд-разработчик и маркетолог Яндекс.Директ" width="64" height="64" loading="lazy" decoding="async" onerror="this.remove()">Д
+                  <img src="img/dmitry.jpg" data-i18n-alt="why.d.alt" alt="Дмитрий — бэкенд-разработчик и маркетолог Яндекс.Директ" width="64" height="64" loading="lazy" decoding="async" onerror="this.remove()">Д
                 </div>
                 <div>
                   <strong>Дмитрий</strong>
-                  <span>Бэкенд-разработчик · Маркетолог Яндекс.Директ</span>
+                  <span data-i18n="why.d.role">Бэкенд-разработчик · Маркетолог Яндекс.Директ</span>
                 </div>
               </div>
             </div>
           </div>
           <div class="why__points">
             <div class="point">
-              <h3>Прозрачная оплата</h3>
-              <p>Предоплата 50%, остаток — после сдачи работы. Стоимость фиксируем до старта.</p>
+              <h3 data-i18n="why.p1.t">Прозрачная оплата</h3>
+              <p data-i18n="why.p1.p">Предоплата 50%, остаток — после сдачи работы. Стоимость фиксируем до старта.</p>
             </div>
             <div class="point">
-              <h3>Работаем по всей России</h3>
-              <p>Всё удалённо: созвоны, отчёты и заявки — в удобном вам формате.</p>
+              <h3 data-i18n="why.p2.t">Работаем по всей России</h3>
+              <p data-i18n="why.p2.p">Всё удалённо: созвоны, отчёты и заявки — в удобном вам формате.</p>
             </div>
             <div class="point">
-              <h3>Понятные цифры</h3>
-              <p>Подключим аналитику — вы видите, откуда приходят заявки и сколько стоит каждая.</p>
+              <h3 data-i18n="why.p3.t">Понятные цифры</h3>
+              <p data-i18n="why.p3.p">Подключим аналитику — вы видите, откуда приходят заявки и сколько стоит каждая.</p>
             </div>
           </div>
         </div>
         <div class="guarantees reveal">
-          <h3 class="guarantees__title">Гарантии</h3>
+          <h3 class="guarantees__title" data-i18n="guarantees.title">Гарантии</h3>
           <ul class="guarantees__list">
-            <li>Договор через ИП — официально, с закрывающими документами</li>
-            <li>Поэтапная оплата: 50% старт / 50% после сдачи</li>
-            <li>Стоимость фиксируется до старта и не растёт по ходу</li>
-            <li>Сроки прописаны в договоре</li>
-            <li>Правки на этапе макета — без ограничений</li>
+            <li data-i18n="guarantees.1">Договор через ИП — официально, с закрывающими документами</li>
+            <li data-i18n="guarantees.2">Поэтапная оплата: 50% старт / 50% после сдачи</li>
+            <li data-i18n="guarantees.3">Стоимость фиксируется до старта и не растёт по ходу</li>
+            <li data-i18n="guarantees.4">Сроки прописаны в договоре</li>
+            <li data-i18n="guarantees.5">Правки на этапе макета — без ограничений</li>
           </ul>
         </div>
       </div>
@@ -581,37 +635,37 @@
     <section class="faq" id="faq" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2 id="faq-title">Вопросы</h2>
-          <p>Коротко о том, что обычно спрашивают до старта.</p>
+          <h2 id="faq-title" data-i18n="faq.title">Вопросы</h2>
+          <p data-i18n="faq.lead">Коротко о том, что обычно спрашивают до старта.</p>
         </div>
         <div class="faq__list reveal">
           <details>
-            <summary>Сколько занимает запуск «под ключ»?</summary>
-            <p>Зависит от ТЗ. Типичный ориентир для лендинга + бота + базовой кампании — от 2–4 недель после брифа и предоплаты. Точные сроки фиксируем в договоре.</p>
+            <summary data-i18n="faq.1.q">Сколько занимает запуск «под ключ»?</summary>
+            <p data-i18n="faq.1.a">Зависит от ТЗ. Типичный ориентир для лендинга + бота + базовой кампании — от 2–4 недель после брифа и предоплаты. Точные сроки фиксируем в договоре.</p>
           </details>
           <details>
-            <summary>Почему на сайте нет полного прайса?</summary>
-            <p>Нижние планки есть в блоке услуг и пакетов. Финальная цена зависит от объёма, интеграций и гео. Бесплатно оценим задачу и назовём вилку под ваш бюджет.</p>
+            <summary data-i18n="faq.2.q">Почему на сайте нет полного прайса?</summary>
+            <p data-i18n="faq.2.a">Нижние планки есть в блоке услуг и пакетов. Финальная цена зависит от объёма, интеграций и гео. Бесплатно оценим задачу и назовём вилку под ваш бюджет.</p>
           </details>
           <details>
-            <summary>Рекламный бюджет входит в пакет?</summary>
-            <p>Нет. Оплата настройки и ведения — нам, бюджет на показы — в кабинете Яндекса отдельно. Ведение: фикс от 15 000 ₽/мес или 10–15% от бюджета — что больше.</p>
+            <summary data-i18n="faq.3.q">Рекламный бюджет входит в пакет?</summary>
+            <p data-i18n="faq.3.a">Нет. Оплата настройки и ведения — нам, бюджет на показы — в кабинете Яндекса отдельно. Ведение: фикс от 15 000 ₽/мес или 10–15% от бюджета — что больше.</p>
           </details>
           <details>
-            <summary>Сколько закладывать на рекламный бюджет?</summary>
-            <p>Зависит от региона и ниши. Тестовый бюджет обычно от 20–30 тыс. ₽/мес. Бюджет платится напрямую Яндексу, не нам.</p>
+            <summary data-i18n="faq.4.q">Сколько закладывать на рекламный бюджет?</summary>
+            <p data-i18n="faq.4.a">Зависит от региона и ниши. Тестовый бюджет обычно от 20–30 тыс. ₽/мес. Бюджет платится напрямую Яндексу, не нам.</p>
           </details>
           <details>
-            <summary>Что если реклама не окупится?</summary>
-            <p>Гарантировать продажи не может никто. Но тест на данных за 2–4 недели покажет стоимость заявки — дальше решение по цифрам, а не по обещаниям.</p>
+            <summary data-i18n="faq.5.q">Что если реклама не окупится?</summary>
+            <p data-i18n="faq.5.a">Гарантировать продажи не может никто. Но тест на данных за 2–4 недели покажет стоимость заявки — дальше решение по цифрам, а не по обещаниям.</p>
           </details>
           <details>
-            <summary>Работаете только с Москвой?</summary>
-            <p>Нет, работаем по всей России удалённо. Рекламу настраиваем на ваш город или на регионы, где есть ваши клиенты.</p>
+            <summary data-i18n="faq.6.q">Работаете только с Москвой?</summary>
+            <p data-i18n="faq.6.a">Нет, работаем по всей России удалённо. Рекламу настраиваем на ваш город или на регионы, где есть ваши клиенты.</p>
           </details>
           <details>
-            <summary>Что с гарантией и поддержкой?</summary>
-            <p>Гарантию и сроки обсуждаем индивидуально. Доработки готовых проектов — от 1 600 ₽/час. Сопровождение можно заложить отдельно.</p>
+            <summary data-i18n="faq.7.q">Что с гарантией и поддержкой?</summary>
+            <p data-i18n="faq.7.a">Гарантию и сроки обсуждаем индивидуально. Доработки готовых проектов — от 1 600 ₽/час. Сопровождение можно заложить отдельно.</p>
           </details>
         </div>
       </div>
@@ -622,8 +676,8 @@
       <div class="wrap">
         <div class="lead__panel reveal">
           <div class="lead__copy">
-            <h2 id="lead-title">Обсудим задачу и дадим оценку</h2>
-            <p>Оставьте имя и контакт — ответим в Telegram или перезвоним. Нишу и детали уточним на созвоне.</p>
+            <h2 id="lead-title" data-i18n="lead.title">Обсудим задачу и дадим оценку</h2>
+            <p data-i18n="lead.text">Оставьте имя и контакт — ответим в Telegram или перезвоним. Нишу и детали уточним на созвоне.</p>
             <div class="lead__contacts">
               <div>
                 Telegram:
@@ -645,28 +699,28 @@
             </div>
             <div class="form__fields">
               <div class="field">
-                <label for="name">Имя</label>
-                <input id="name" name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться">
+                <label for="name" data-i18n="form.name">Имя</label>
+                <input id="name" name="name" type="text" autocomplete="name" required data-i18n-placeholder="form.namePh" placeholder="Как к вам обращаться">
               </div>
               <div class="field">
-                <label for="contact">Telegram или телефон</label>
-                <input id="contact" name="contact" type="text" autocomplete="tel" required placeholder="@username или +7…">
+                <label for="contact" data-i18n="form.contact">Telegram или телефон</label>
+                <input id="contact" name="contact" type="text" autocomplete="tel" required data-i18n-placeholder="form.contactPh" placeholder="@username или +7…">
               </div>
               <div class="field">
-                <label for="package">Интересует</label>
+                <label for="package" data-i18n="form.package">Интересует</label>
                 <select id="package" name="package">
-                  <option value="turnkey">Под ключ (лендинг + бот + Директ)</option>
-                  <option value="funnel">Бот + воронка</option>
-                  <option value="growth">Под ключ + рост</option>
-                  <option value="audit">Бесплатный аудит рекламы/сайта</option>
-                  <option value="bot">Telegram-бот</option>
-                  <option value="site">Лендинг / сайт</option>
-                  <option value="direct">Яндекс.Директ</option>
-                  <option value="other">Другое / автоматизация</option>
+                  <option value="turnkey" data-i18n="form.opt.turnkey">Под ключ (лендинг + бот + Директ)</option>
+                  <option value="funnel" data-i18n="form.opt.funnel">Бот + воронка</option>
+                  <option value="growth" data-i18n="form.opt.growth">Под ключ + рост</option>
+                  <option value="audit" data-i18n="form.opt.audit">Бесплатный аудит рекламы/сайта</option>
+                  <option value="bot" data-i18n="form.opt.bot">Telegram-бот</option>
+                  <option value="site" data-i18n="form.opt.site">Лендинг / сайт</option>
+                  <option value="direct" data-i18n="form.opt.direct">Яндекс.Директ</option>
+                  <option value="other" data-i18n="form.opt.other">Другое / автоматизация</option>
                 </select>
               </div>
-              <button class="btn btn--primary" type="submit" data-goal="lead_submit">Отправить заявку</button>
-              <p class="form__hint">Нажимая кнопку, вы соглашаетесь на <a href="privacy.html">обработку персональных данных</a>, чтобы мы могли ответить по заявке.</p>
+              <button class="btn btn--primary" type="submit" data-goal="lead_submit" data-i18n="form.submit">Отправить заявку</button>
+              <p class="form__hint" data-i18n-html="form.hint">Нажимая кнопку, вы соглашаетесь на <a href="privacy.html">обработку персональных данных</a>, чтобы мы могли ответить по заявке.</p>
             </div>
           </form>
         </div>
@@ -674,19 +728,20 @@
     </section>
   </main>
 
-  <a class="sticky-cta" id="sticky-cta" href="#lead" hidden>Получить оценку</a>
+  <a class="sticky-cta" id="sticky-cta" href="#audit" hidden data-i18n="sticky">Бесплатный аудит</a>
 
   <footer>
     <div class="wrap footer__inner">
-      <div class="footer__brand">Веб-Кузница: разработка и маркетинг</div>
-      <div>Python · боты · сайты · Директ · по России</div>
+      <div class="footer__brand" data-i18n="footer.brand">Лидогенераторная: разработка и маркетинг</div>
+      <div data-i18n="footer.line">Python · боты · сайты · Директ · по России</div>
       <div class="footer__links">
         <a href="https://t.me/n9dmitry" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a href="privacy.html">Политика данных</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Политика данных</a>
       </div>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/index.js"></script>
   <!--
     Calltracking: replace [data-calltracking-number] text via your provider script.

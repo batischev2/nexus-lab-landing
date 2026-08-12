@@ -1,11 +1,51 @@
 (function () {
-  var nav = document.getElementById("nav");
-  var onScroll = function () {
-    if (window.scrollY > 24) nav.classList.add("scrolled");
-    else nav.classList.remove("scrolled");
+  var root = document.documentElement;
+  var themeMeta = document.getElementById("theme-color");
+
+  var applyTheme = function (theme) {
+    root.setAttribute("data-theme", theme);
+    if (themeMeta) themeMeta.setAttribute("content", theme === "light" ? "#f3f6f9" : "#0a0d11");
+    var t = window.LIDO_I18N && window.LIDO_I18N.t;
+    document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
+      var label;
+      if (t) label = theme === "light" ? t("theme.toDark") : t("theme.toLight");
+      else label = theme === "light" ? "Включить тёмную тему" : "Включить светлую тему";
+      btn.setAttribute("aria-label", label);
+    });
   };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+
+  var currentTheme = function () {
+    return root.getAttribute("data-theme") === "light" ? "light" : "dark";
+  };
+
+  if (!root.getAttribute("data-theme")) {
+    var stored;
+    try { stored = localStorage.getItem("theme"); } catch (e) { stored = null; }
+    var initial = stored === "light" || stored === "dark"
+      ? stored
+      : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    applyTheme(initial);
+  } else {
+    applyTheme(currentTheme());
+  }
+
+  document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var next = currentTheme() === "light" ? "dark" : "light";
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      applyTheme(next);
+    });
+  });
+
+  var nav = document.getElementById("nav");
+  if (nav) {
+    var onScroll = function () {
+      if (window.scrollY > 24) nav.classList.add("scrolled");
+      else nav.classList.remove("scrolled");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
 
   // Scroll reveal
   var reveals = document.querySelectorAll(".reveal");
@@ -43,30 +83,32 @@
 
   // Lead form — local success + Telegram deep link helper
   var form = document.getElementById("lead-form");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    if (!form.reportValidity()) return;
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
 
-    var name = form.name.value.trim();
-    var contact = form.contact.value.trim();
-    var pack = form.package.options[form.package.selectedIndex].text;
+      var name = form.name.value.trim();
+      var contact = form.contact.value.trim();
+      var pack = form.package.options[form.package.selectedIndex].text;
 
-    if (typeof window.ym === "function" && window.NEXUS_METRIKA_ID) {
-      window.ym(window.NEXUS_METRIKA_ID, "reachGoal", "lead_submit");
-    }
+      if (typeof window.ym === "function" && window.NEXUS_METRIKA_ID) {
+        window.ym(window.NEXUS_METRIKA_ID, "reachGoal", "lead_submit");
+      }
 
-    var text = [
-      "Заявка с лендинга Веб-Кузницы",
-      "Имя: " + name,
-      "Контакт: " + contact,
-      "Интересует: " + pack
-    ].join("\n");
+      var text = [
+        (window.LIDO_I18N && window.LIDO_I18N.t ? window.LIDO_I18N.t("tg.lead") : "Заявка с лендинга Лидогенераторной"),
+        (window.LIDO_I18N && window.LIDO_I18N.t ? window.LIDO_I18N.t("tg.name") : "Имя: ") + name,
+        (window.LIDO_I18N && window.LIDO_I18N.t ? window.LIDO_I18N.t("tg.contact") : "Контакт: ") + contact,
+        (window.LIDO_I18N && window.LIDO_I18N.t ? window.LIDO_I18N.t("tg.pack") : "Интересует: ") + pack
+      ].join("\n");
 
-    form.classList.add("is-success");
+      form.classList.add("is-success");
 
-    var tg = "https://t.me/n9dmitry?text=" + encodeURIComponent(text);
-    window.open(tg, "_blank", "noopener,noreferrer");
-  });
+      var tg = "https://t.me/n9dmitry?text=" + encodeURIComponent(text);
+      window.open(tg, "_blank", "noopener,noreferrer");
+    });
+  }
 
   // Goal clicks
   document.querySelectorAll("[data-goal]").forEach(function (el) {
