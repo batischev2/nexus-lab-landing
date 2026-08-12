@@ -105,7 +105,7 @@
 
       form.classList.add("is-success");
 
-      var tg = "https://t.me/n9dmitry?text=" + encodeURIComponent(text);
+      var tg = "https://t.me/batischev97?text=" + encodeURIComponent(text);
       window.open(tg, "_blank", "noopener,noreferrer");
     });
   }
