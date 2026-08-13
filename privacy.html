@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Политика обработки персональных данных — Лидогенераторная</title>
   <meta name="description" content="Политика обработки персональных данных Лидогенераторной: цели, основания, сроки хранения и права субъекта данных.">
   <meta name="robots" content="noindex, follow">
@@ -24,15 +24,11 @@
       } catch (e) {
         document.documentElement.setAttribute("data-theme", "dark");
       }
-      try {
-        var lang = localStorage.getItem("lang");
-        if (lang === "en" || lang === "ru") document.documentElement.setAttribute("lang", lang);
-      } catch (e2) {}
     })();
   </script>
   <style>
     .legal {
-      padding: 7.5rem 0 4rem;
+      padding: calc(7.5rem + env(safe-area-inset-top, 0px)) 0 calc(4rem + env(safe-area-inset-bottom, 0px));
       max-width: 42rem;
     }
     .legal h1 {
@@ -85,9 +81,6 @@
         <span class="logo__text">Лидогенератор<span class="logo__accent">ная</span></span>
       </a>
       <div class="nav__actions">
-        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch to English" aria-pressed="false">
-          <span data-lang-label>EN</span>
-        </button>
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Переключить тему">
           <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <circle cx="12" cy="12" r="4"/>
@@ -97,10 +90,7 @@
             <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"/>
           </svg>
         </button>
-        <a class="nav__cta" href="index.html#audit">
-          <span class="nav__cta-full" data-i18n="nav.cta">Бесплатный аудит</span>
-          <span class="nav__cta-short" data-i18n="nav.ctaShort">Аудит</span>
-        </a>
+        <a class="nav__cta" href="index.html#audit">Бесплатный аудит</a>
       </div>
     </div>
   </header>
@@ -165,7 +155,6 @@
       </div>
     </div>
   </footer>
-  <script src="js/i18n.js"></script>
   <script src="js/index.js"></script>
 </body>
 </html>

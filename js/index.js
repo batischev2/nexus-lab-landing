@@ -5,12 +5,11 @@
   var applyTheme = function (theme) {
     root.setAttribute("data-theme", theme);
     if (themeMeta) themeMeta.setAttribute("content", theme === "light" ? "#f3f6f9" : "#0a0d11");
-    var t = window.LIDO_I18N && window.LIDO_I18N.t;
     document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
-      var label;
-      if (t) label = theme === "light" ? t("theme.toDark") : t("theme.toLight");
-      else label = theme === "light" ? "Включить тёмную тему" : "Включить светлую тему";
-      btn.setAttribute("aria-label", label);
+      btn.setAttribute(
+        "aria-label",
+        theme === "light" ? "Включить тёмную тему" : "Включить светлую тему"
+      );
     });
   };
 
@@ -57,8 +56,15 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-    reveals.forEach(function (el) { io.observe(el); });
+    }, { threshold: 0, rootMargin: "64px 0px 0px 0px" });
+    reveals.forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add("in");
+      } else {
+        io.observe(el);
+      }
+    });
   } else {
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
@@ -81,6 +87,117 @@
     if (map[offer]) select.value = map[offer];
   }
 
+  document.querySelectorAll("[data-select]").forEach(function (wrap) {
+    var native = wrap.querySelector("select");
+    if (!native) return;
+    wrap.classList.add("is-custom");
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "select__btn";
+    btn.setAttribute("aria-haspopup", "listbox");
+    btn.setAttribute("aria-expanded", "false");
+    btn.id = native.id + "-btn";
+    var label = wrap.closest(".field") && wrap.closest(".field").querySelector("label");
+    if (label) btn.setAttribute("aria-labelledby", label.id || (label.id = native.id + "-label"));
+
+    var valueEl = document.createElement("span");
+    valueEl.className = "select__value";
+    var chevron = document.createElement("span");
+    chevron.className = "select__chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    btn.appendChild(valueEl);
+    btn.appendChild(chevron);
+
+    var list = document.createElement("ul");
+    list.className = "select__list";
+    list.setAttribute("role", "listbox");
+    list.id = native.id + "-list";
+    btn.setAttribute("aria-controls", list.id);
+
+    var optionEls = [];
+    Array.prototype.forEach.call(native.options, function (opt, i) {
+      var li = document.createElement("li");
+      li.className = "select__option";
+      li.setAttribute("role", "option");
+      li.dataset.value = opt.value;
+      li.textContent = opt.text;
+      li.id = native.id + "-opt-" + i;
+      list.appendChild(li);
+      optionEls.push(li);
+    });
+
+    var sync = function () {
+      var current = native.options[native.selectedIndex];
+      valueEl.textContent = current ? current.text : "";
+      optionEls.forEach(function (li) {
+        var on = li.dataset.value === native.value;
+        li.classList.toggle("is-selected", on);
+        li.setAttribute("aria-selected", on ? "true" : "false");
+      });
+    };
+
+    var close = function () {
+      wrap.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+    };
+    var open = function () {
+      wrap.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
+    };
+
+    btn.addEventListener("click", function () {
+      if (wrap.classList.contains("is-open")) close();
+      else open();
+    });
+    list.addEventListener("click", function (e) {
+      var li = e.target.closest(".select__option");
+      if (!li) return;
+      native.value = li.dataset.value;
+      native.dispatchEvent(new Event("change", { bubbles: true }));
+      sync();
+      close();
+      btn.focus();
+    });
+    document.addEventListener("click", function (e) {
+      if (!wrap.contains(e.target)) close();
+    });
+    btn.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        open();
+        var selected = list.querySelector(".is-selected") || optionEls[0];
+        if (selected) selected.focus();
+      }
+    });
+    optionEls.forEach(function (li) {
+      li.tabIndex = -1;
+      li.addEventListener("keydown", function (e) {
+        var i = optionEls.indexOf(li);
+        if (e.key === "Escape") { close(); btn.focus(); }
+        if (e.key === "ArrowDown") { e.preventDefault(); optionEls[Math.min(i + 1, optionEls.length - 1)].focus(); }
+        if (e.key === "ArrowUp") { e.preventDefault(); optionEls[Math.max(i - 1, 0)].focus(); }
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          native.value = li.dataset.value;
+          native.dispatchEvent(new Event("change", { bubbles: true }));
+          sync();
+          close();
+          btn.focus();
+        }
+      });
+      li.addEventListener("mouseenter", function () {
+        optionEls.forEach(function (el) { el.classList.remove("is-active"); });
+        li.classList.add("is-active");
+      });
+    });
+
+    wrap.appendChild(btn);
+    wrap.appendChild(list);
+    sync();
+  });
+
   // Lead form — local success + Telegram deep link helper
   var form = document.getElementById("lead-form");
   if (form) {
@@ -97,10 +214,10 @@
       }
 
       var text = [
-        (window.LIDO_I18N && window.LIDO_I18N.t ? window.LIDO_I18N.t("tg.lead") : "Заявка с лендинга Лидогенераторной"),
-        (window.LIDO_I18N && window.LIDO_I18N.t ? window.LIDO_I18N.t("tg.name") : "Имя: ") + name,
-        (window.LIDO_I18N && window.LIDO_I18N.t ? window.LIDO_I18N.t("tg.contact") : "Контакт: ") + contact,
-        (window.LIDO_I18N && window.LIDO_I18N.t ? window.LIDO_I18N.t("tg.pack") : "Интересует: ") + pack
+        "Заявка с лендинга Лидогенераторной",
+        "Имя: " + name,
+        "Контакт: " + contact,
+        "Интересует: " + pack
       ].join("\n");
 
       form.classList.add("is-success");
@@ -145,6 +262,91 @@
     window.addEventListener("resize", syncSticky, { passive: true });
     syncSticky();
   }
+
+  (function initHeroFlow() {
+    var svg = document.querySelector(".hero__flow");
+    var track = svg && svg.querySelector("#hero-flow-track");
+    var dot = svg && svg.querySelector(".flow-dot");
+    var cards = svg ? [].slice.call(svg.querySelectorAll(".flow-card")) : [];
+    if (!svg || !track || !dot || !cards.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    var length = track.getTotalLength();
+    if (!length) return;
+
+    var duration = 7500;
+    var radius = Number(dot.getAttribute("r")) || 5;
+    var boxes = cards.map(function (g) {
+      var rect = g.querySelector("rect");
+      return {
+        el: g,
+        x: Number(rect.getAttribute("x")),
+        y: Number(rect.getAttribute("y")),
+        w: Number(rect.getAttribute("width")),
+        h: Number(rect.getAttribute("height"))
+      };
+    });
+
+    var start = null;
+    var raf = 0;
+    var running = false;
+    var active = -1;
+
+    function hitIndex(point) {
+      for (var i = 0; i < boxes.length; i++) {
+        var box = boxes[i];
+        if (
+          point.x >= box.x - radius &&
+          point.x <= box.x + box.w + radius &&
+          point.y >= box.y - radius &&
+          point.y <= box.y + box.h + radius
+        ) {
+          return i;
+        }
+      }
+      return -1;
+    }
+
+    function tick(now) {
+      if (!running) return;
+      if (start === null) start = now;
+      var progress = ((now - start) % duration) / duration;
+      var point = track.getPointAtLength(progress * length);
+      dot.setAttribute("cx", point.x);
+      dot.setAttribute("cy", point.y);
+
+      var hit = hitIndex(point);
+      dot.setAttribute("opacity", hit >= 0 ? "0" : "1");
+      if (hit !== active) {
+        if (active >= 0) boxes[active].el.classList.remove("is-active");
+        if (hit >= 0) boxes[hit].el.classList.add("is-active");
+        active = hit;
+      }
+
+      raf = requestAnimationFrame(tick);
+    }
+
+    function play() {
+      if (running) return;
+      running = true;
+      raf = requestAnimationFrame(tick);
+    }
+
+    function stop() {
+      running = false;
+      cancelAnimationFrame(raf);
+    }
+
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) play();
+        else stop();
+      }, { threshold: 0.12 });
+      io.observe(svg);
+    } else {
+      play();
+    }
+  })();
 
   // --- Yandex Metrika ---
   // Раскомментируйте и подставьте ID счётчика:
