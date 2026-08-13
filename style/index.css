@@ -165,11 +165,20 @@ ul { list-style: none; }
   white-space: nowrap;
 }
 .logo__mark {
-  width: 1.55rem;
-  height: 1.55rem;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #7ff5ef, var(--accent) 45%, var(--accent-2));
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.12), 0 0 24px rgba(30, 200, 192, 0.35);
+  width: 1.7rem;
+  height: 1.7rem;
+  flex-shrink: 0;
+  overflow: visible;
+  filter: drop-shadow(0 0 10px rgba(30, 200, 192, 0.28));
+}
+.logo__mark-reticle {
+  stroke: #eef2f6;
+}
+[data-theme="light"] .logo__mark-reticle {
+  stroke: #12181f;
+}
+.logo__accent {
+  color: var(--accent);
 }
 .nav__links {
   display: none;
@@ -384,7 +393,6 @@ ul { list-style: none; }
 .hero__eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
   font-family: var(--font-display);
   font-size: 0.8rem;
   font-weight: 600;
@@ -392,12 +400,6 @@ ul { list-style: none; }
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1.2rem;
-}
-.hero__eyebrow::after {
-  content: "";
-  width: 2.2rem;
-  height: 1px;
-  background: linear-gradient(90deg, var(--accent), transparent);
 }
 .hero h1 {
   font-family: var(--font-display);

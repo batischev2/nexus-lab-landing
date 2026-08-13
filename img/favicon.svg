@@ -1,5 +1,12 @@
 ﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#0a0d11"/>
-  <path d="M8 22 L16 8 L24 22" stroke="#1ec8c0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M11.5 16.5 H20.5" stroke="#3aa0ff" stroke-width="2" stroke-linecap="round"/>
+  <rect width="32" height="32" rx="7" fill="#0a0d11"/>
+  <polygon
+    points="16,3.4 27.1,9.8 27.1,22.2 16,28.6 4.9,22.2 4.9,9.8"
+    stroke="#1ec8c0"
+    stroke-width="2.15"
+    stroke-linejoin="round"
+    fill="none"/>
+  <circle cx="16" cy="16" r="5.1" fill="none" stroke="#eef2f6" stroke-width="1.25"/>
+  <path d="M16 7.4 V10.2 M16 21.8 V24.6 M7.4 16 H10.2 M21.8 16 H24.6" stroke="#eef2f6" stroke-width="1.25" stroke-linecap="round"/>
+  <circle cx="16" cy="16" r="2.2" fill="#3aa0ff"/>
 </svg>
