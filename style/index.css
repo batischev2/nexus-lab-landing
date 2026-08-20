@@ -176,15 +176,6 @@ ul { list-style: none; }
   overflow: visible;
   filter: drop-shadow(0 0 10px rgba(30, 200, 192, 0.28));
 }
-.logo__mark-reticle {
-  stroke: #eef2f6;
-}
-[data-theme="light"] .logo__mark-reticle {
-  stroke: #12181f;
-}
-.logo__accent {
-  color: var(--accent);
-}
 .nav__links {
   display: none;
   gap: 1.6rem;

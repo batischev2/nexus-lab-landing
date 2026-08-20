@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 96" fill="none">
+  <defs>
+    <style>
+      @font-face {
+        font-family: "Golos Text";
+        font-style: normal;
+        font-weight: 400 700;
+        src: url("../fonts/golos-cyrillic.woff2") format("woff2");
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+    </style>
+  </defs>
+  <g transform="translate(4,8) scale(2.5)" style="isolation:isolate">
+    <path d="M4.8 26.6 L16 7.2" stroke="#1ec8c0" stroke-width="7.8" stroke-linecap="round"/>
+    <path d="M27.2 26.6 L16 7.2" stroke="#3aa0ff" stroke-width="7.8" stroke-linecap="round" style="mix-blend-mode:screen"/>
+  </g>
+  <text
+    x="104"
+    y="58"
+    fill="#12181f"
+    font-family="Golos Text, sans-serif"
+    font-size="31"
+    font-weight="700"
+    letter-spacing="0.5"
+    stroke="#12181f"
+    stroke-width="0.55"
+    paint-order="stroke fill">Лидогенераторная</text>
+</svg>
