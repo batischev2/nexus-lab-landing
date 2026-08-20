@@ -1600,3 +1600,37 @@ main > section { padding: 2.75rem 0; }
   color: var(--ink-soft);
 }
 .guarantees__list li::before { content: none; }
+/* === Плитки болей и решений: 2x2, крупно, сканируется взглядом === */
+.tiles {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media (min-width: 700px) {
+  .tiles { grid-template-columns: 1fr 1fr; }
+}
+.tile {
+  background: var(--bg-soft);
+  padding: 2rem 1.6rem;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+.tile::before {
+  content: "—";
+  color: var(--warn);
+  font-weight: 700;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+.tiles--solve .tile::before {
+  content: "✓";
+  color: var(--accent);
+}

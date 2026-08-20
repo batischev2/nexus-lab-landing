@@ -252,7 +252,7 @@
         <span class="logo__text">Лидогенераторная</span>
       </a>
       <nav class="nav__links" data-i18n-aria="nav.aria" aria-label="Разделы">
-        <a href="#how" data-i18n="nav.how">Как работает</a>
+        <a href="#how">Процесс</a>
         <a href="#services" data-i18n="nav.services">Услуги</a>
         <a href="#packages" data-i18n="nav.packages">Пакеты</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
@@ -273,7 +273,6 @@
   </header>
 
   <main id="top">
-    <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__visual" aria-hidden="true">
@@ -352,50 +351,42 @@
       </div>
     </section>
 
-    <!-- VALUE: что делаем / боли / как решаем / почему мы -->
+    <!-- БОЛИ -->
     <section class="value" id="pain" aria-labelledby="pain-title">
       <div class="wrap">
-        <div class="value__panel reveal">
-          <p class="value__badge" data-i18n="pain.badge">Для вашего бизнеса</p>
-          <div class="value__head">
-            <h2 id="pain-title" data-i18n="pain.title">От кликов — к заявкам, которые доходят до вас</h2>
-            <p data-i18n="pain.lead">Сайт, реклама и приём заявок — одна система.</p>
-          </div>
-          <div class="value__grid">
-            <article class="value__col">
-              <span class="value__num" aria-hidden="true">01</span>
-              <h3 data-i18n="pain.do.t">Что делаем</h3>
-              <ul class="value__list">
-                <li>Страница под рекламу</li>
-                <li>Реклама в Яндексе и соцсетях</li>
-                <li>Заявки — сразу вам в телефон</li>
-              </ul>
-            </article>
-            <article class="value__col">
-              <span class="value__num" aria-hidden="true">02</span>
-              <h3 data-i18n="pain.pain.t">Знакомо?</h3>
-              <ul class="value__list">
-                <li>Реклама крутится — телефон молчит</li>
-                <li>Отчёты приходят, клиентов не видно</li>
-                <li>Сайт есть, а заявок нет</li>
-                <li>Ответили утром — клиент уже купил у других</li>
-              </ul>
-            </article>
-            <article class="value__col">
-              <span class="value__num" aria-hidden="true">03</span>
-              <h3 data-i18n="pain.solve.t">Как решаем</h3>
-              <ul class="value__list">
-                <li>Собираем всё в одну систему</li>
-                <li>Запускаем и смотрим цифры</li>
-                <li>Усиливаем то, что приводит клиентов</li>
-              </ul>
-            </article>
-          </div>
+        <div class="panel reveal">
+        <p class="panel__badge">Боли</p>
+        <div class="section-head">
+          <h2 id="pain-title">Знакомо?</h2>
+        </div>
+        <div class="tiles">
+          <div class="tile">Реклама крутится — телефон молчит</div>
+          <div class="tile">Отчёты приходят, клиентов не видно</div>
+          <div class="tile">Сайт есть, а заявок нет</div>
+          <div class="tile">Ответили утром — клиент уже купил у других</div>
+        </div>
         </div>
       </div>
     </section>
 
-    <!-- AUDIT lead magnet -->
+    <!-- РЕШЕНИЯ -->
+    <section id="solve" aria-labelledby="solve-title">
+      <div class="wrap">
+        <div class="panel reveal">
+        <p class="panel__badge">Решения</p>
+        <div class="section-head">
+          <h2 id="solve-title">Как мы это решаем</h2>
+        </div>
+        <div class="tiles tiles--solve">
+          <div class="tile">Реклама с аналитикой — видно, что окупается</div>
+          <div class="tile">Страница, которая доводит до заявки</div>
+          <div class="tile">Заявка сразу у вас в телефоне</div>
+          <div class="tile">Бот отвечает клиенту мгновенно — даже ночью</div>
+        </div>
+        </div>
+      </div>
+    </section>
+
     <section class="audit" id="audit" aria-labelledby="audit-title">
       <div class="wrap">
         <div class="audit__panel reveal">
@@ -416,42 +407,7 @@
       </div>
     </section>
 
-    <!-- HOW -->
-    <section id="how" aria-labelledby="how-title">
-      <div class="wrap">
-        <div class="panel reveal">
-        <p class="panel__badge">Процесс</p>
-        <div class="section-head">
-          <h2 id="how-title" data-i18n="how.title">Как работает связка</h2>
-          <p data-i18n="how.lead">От первого разговора до потока заявок — четыре шага. Сначала запускаем, потом усиливаем то, что приводит клиентов.</p>
-        </div>
-        <div class="steps__track reveal">
-          <article class="step">
-            <h3 data-i18n="how.1.t">Бриф и оценка</h3>
-            <p class="step__time" data-i18n="how.1.time">1–2 дня</p>
-            <p data-i18n="how.1.p">Разбираем задачу и называем вилку по цене и срокам.</p>
-          </article>
-          <article class="step">
-            <h3 data-i18n="how.2.t">Сайт и приём заявок</h3>
-            <p class="step__time" data-i18n="how.2.time">2–3 недели</p>
-            <p data-i18n="how.2.p">Делаем страницу и подключаем приём заявок с уведомлениями вам.</p>
-          </article>
-          <article class="step">
-            <h3 data-i18n="how.3.t">Запуск Директа</h3>
-            <p class="step__time" data-i18n="how.3.time">3–5 дней</p>
-            <p data-i18n="how.3.p">Запросы, объявления, аналитика — реклама готова.</p>
-          </article>
-          <article class="step">
-            <h3 data-i18n="how.4.t">Заявки и данные</h3>
-            <p class="step__time" data-i18n="how.4.time">с первой недели рекламы</p>
-            <p data-i18n="how.4.p">Заявки идут вам. Видно, сколько стоит каждая и что окупается.</p>
-          </article>
-        </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- SERVICES -->
     <section class="services" id="services" aria-labelledby="services-title">
       <div class="wrap">
         <div class="panel reveal">
@@ -498,7 +454,42 @@
       </div>
     </section>
 
-    <!-- PACKAGES -->
+
+    <section id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="panel reveal">
+        <p class="panel__badge">Процесс</p>
+        <div class="section-head">
+          <h2 id="how-title" data-i18n="how.title">Как работает связка</h2>
+          <p data-i18n="how.lead">От первого разговора до потока заявок — четыре шага. Сначала запускаем, потом усиливаем то, что приводит клиентов.</p>
+        </div>
+        <div class="steps__track reveal">
+          <article class="step">
+            <h3 data-i18n="how.1.t">Бриф и оценка</h3>
+            <p class="step__time" data-i18n="how.1.time">1–2 дня</p>
+            <p data-i18n="how.1.p">Разбираем задачу и называем вилку по цене и срокам.</p>
+          </article>
+          <article class="step">
+            <h3 data-i18n="how.2.t">Сайт и приём заявок</h3>
+            <p class="step__time" data-i18n="how.2.time">2–3 недели</p>
+            <p data-i18n="how.2.p">Делаем страницу и подключаем приём заявок с уведомлениями вам.</p>
+          </article>
+          <article class="step">
+            <h3 data-i18n="how.3.t">Запуск Директа</h3>
+            <p class="step__time" data-i18n="how.3.time">3–5 дней</p>
+            <p data-i18n="how.3.p">Запросы, объявления, аналитика — реклама готова.</p>
+          </article>
+          <article class="step">
+            <h3 data-i18n="how.4.t">Заявки и данные</h3>
+            <p class="step__time" data-i18n="how.4.time">с первой недели рекламы</p>
+            <p data-i18n="how.4.p">Заявки идут вам. Видно, сколько стоит каждая и что окупается.</p>
+          </article>
+        </div>
+        </div>
+      </div>
+    </section>
+
+
     <section id="packages" aria-labelledby="packages-title">
       <div class="wrap">
         <div class="panel reveal">
@@ -565,7 +556,7 @@
       </div>
     </section>
 
-    <!-- WHY -->
+
     <section id="why" aria-labelledby="why-title">
       <div class="wrap">
         <div class="panel reveal">
@@ -624,7 +615,21 @@
       </div>
     </section>
 
-    <!-- FAQ -->
+
+    <!-- ОТЗЫВЫ -->
+    <section id="reviews" aria-labelledby="reviews-title">
+      <div class="wrap">
+        <div class="panel reveal">
+        <p class="panel__badge">Отзывы</p>
+        <div class="section-head">
+          <h2 id="reviews-title">Здесь будут отзывы первых клиентов</h2>
+          <p>Студия молодая — врать чужими отзывами не будем. Первые проекты получают максимум внимания двух основателей: станьте первым, и этот блок начнётся с вас.</p>
+        </div>
+        <a class="btn btn--primary" href="#lead">Обсудить проект</a>
+        </div>
+      </div>
+    </section>
+
     <section class="faq" id="faq" aria-labelledby="faq-title">
       <div class="wrap">
         <div class="panel reveal">
@@ -667,7 +672,7 @@
       </div>
     </section>
 
-    <!-- LEAD -->
+
     <section class="lead" id="lead" aria-labelledby="lead-title">
       <div class="wrap">
         <div class="lead__panel reveal">
