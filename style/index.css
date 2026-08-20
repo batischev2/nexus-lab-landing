@@ -485,15 +485,17 @@ section {
   padding: 5rem 0;
   position: relative;
 }
-/* Секции-экраны: каждый блок высотой с hero, контент по центру */
+/* Секции-экраны: каждый блок высотой с hero, контент по центру.
+   Блок разбора — компактная перебивка, его не растягиваем */
 @media (min-width: 860px) {
-  main > section:not(.hero) {
+  main > section:not(.hero):not(.audit) {
     min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 4rem 0;
   }
+  main > section.audit { padding: 3.5rem 0; }
 }
 .section-head {
   margin-bottom: 2.25rem;
@@ -589,6 +591,27 @@ section {
   font-size: 0.98rem;
   line-height: 1.5;
 }
+.audit__list {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.audit__list li {
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 0.94rem;
+  color: var(--ink);
+}
+.audit__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
 .audit__panel .btn {
   flex-shrink: 0;
 }
@@ -661,10 +684,11 @@ section {
   background: var(--line);
 }
 @media (min-width: 860px) {
-  .value__grid { grid-template-columns: repeat(4, 1fr); }
+  .value__grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (min-width: 560px) and (max-width: 859.98px) {
   .value__grid { grid-template-columns: 1fr 1fr; }
+  .value__col:nth-child(3) { grid-column: 1 / -1; }
 }
 .value__col {
   background: var(--bg-soft);
@@ -1482,3 +1506,14 @@ body.has-sticky-cta {
   .flow-dot { display: none; }
 }
   
+
+/* === Равномерное наполнение секций-экранов (в конце файла, чтобы выигрывать каскад) === */
+@media (min-width: 860px) {
+  main > section .section-head { margin-bottom: 3rem; }
+  .steps__track { gap: 1.5rem; }
+  .step { padding-block: 2rem; }
+  .step p { font-size: 0.98rem; }
+  .services__grid { gap: 1.35rem; }
+  .service { padding: 1.9rem 1.6rem; gap: 0.7rem; }
+  .lead__panel { gap: 3rem; padding: 3rem; }
+}
