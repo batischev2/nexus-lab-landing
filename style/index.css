@@ -485,6 +485,16 @@ section {
   padding: 5rem 0;
   position: relative;
 }
+/* Секции-экраны: каждый блок высотой с hero, контент по центру */
+@media (min-width: 860px) {
+  main > section:not(.hero) {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 0;
+  }
+}
 .section-head {
   margin-bottom: 2.25rem;
   max-width: 40rem;
