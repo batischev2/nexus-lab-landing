@@ -485,18 +485,6 @@ section {
   padding: 5rem 0;
   position: relative;
 }
-/* Секции-экраны: каждый блок высотой с hero, контент по центру.
-   Блок разбора — компактная перебивка, его не растягиваем */
-@media (min-width: 860px) {
-  main > section:not(.hero):not(.audit) {
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 4rem 0;
-  }
-  main > section.audit { padding: 3.5rem 0; }
-}
 .section-head {
   margin-bottom: 2.25rem;
   max-width: 40rem;
@@ -1517,3 +1505,43 @@ body.has-sticky-cta {
   .service { padding: 1.9rem 1.6rem; gap: 0.7rem; }
   .lead__panel { gap: 3rem; padding: 3rem; }
 }
+/* === Панельная структура: каждый блок — одинаковая карточка с бейджем === */
+main > section { padding: 2.75rem 0; }
+.hero { padding: 6.5rem 0 3.5rem; }
+.panel {
+  position: relative;
+  padding: clamp(1.6rem, 3.5vw, 2.4rem);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-elev);
+}
+.panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 14px 0 0 14px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+}
+.panel__badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--btn-on-accent);
+  background: linear-gradient(135deg, var(--accent), #18a8d8);
+  margin-bottom: 1.15rem;
+}
+.panel .section-head { margin-bottom: 2rem; }
+.services { background: transparent; border-block: 0; }
+.faq { border-top: 0; }
+
+/* Единый ритм: у панельных секций разбора и болей те же отступы, что у остальных */
+.audit, .value { padding: 2.75rem 0; }
