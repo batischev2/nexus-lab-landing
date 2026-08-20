@@ -1663,3 +1663,70 @@ main > section { padding: 2.75rem 0; }
   #reviews .section-head p { font-size: 1.12rem; }
   #reviews .btn { padding: 1.15rem 1.9rem; font-size: 1.05rem; }
 }
+/* === Модальное окно === */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+.modal[hidden] { display: none; }
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 8, 12, 0.6);
+  backdrop-filter: blur(4px);
+}
+.modal__panel {
+  position: relative;
+  width: min(100%, 420px);
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: var(--shadow-elev);
+  animation: modalIn 0.3s var(--ease);
+}
+.modal__close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+}
+.modal__close:hover { color: var(--ink); }
+.modal__panel h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  margin: 0.5rem 0 0.35rem;
+}
+.modal__text { color: var(--muted); margin-bottom: 1rem; }
+.modal__form { display: grid; gap: 0.7rem; }
+.modal__form input {
+  width: 100%;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--input-bg);
+}
+.modal__form input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.modal__success { color: var(--ok); font-weight: 600; padding: 0.6rem 0; }
+.modal .form__hint { margin-top: 0.8rem; }
+body.modal-open { overflow: hidden; }
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .modal__panel { animation: none; }
+}

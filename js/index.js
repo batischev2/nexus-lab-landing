@@ -356,3 +356,49 @@
   // k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
   // ym(window.NEXUS_METRIKA_ID, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
 })();
+
+// Модальное окно: показ через 12 секунд, раз за сессию, после отправки не показываем
+(function () {
+  var modal = document.getElementById("contact-modal");
+  if (!modal) return;
+  try {
+    if (sessionStorage.getItem("modalDismissed") || localStorage.getItem("modalSubmitted")) return;
+  } catch (e) {}
+
+  var input = document.getElementById("modal-contact");
+  var open = function () {
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+    if (input) setTimeout(function () { input.focus(); }, 60);
+  };
+  var close = function () {
+    modal.hidden = true;
+    document.body.classList.remove("modal-open");
+    try { sessionStorage.setItem("modalDismissed", "1"); } catch (e) {}
+  };
+
+  setTimeout(open, 12000);
+
+  modal.addEventListener("click", function (e) {
+    if (e.target.hasAttribute("data-modal-close")) close();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !modal.hidden) close();
+  });
+
+  var form = document.getElementById("modal-form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = (input.value || "").trim();
+    if (!v) { input.focus(); return; }
+    if (typeof window.ym === "function" && window.NEXUS_METRIKA_ID) {
+      window.ym(window.NEXUS_METRIKA_ID, "reachGoal", "modal_submit");
+    }
+    try { localStorage.setItem("modalSubmitted", "1"); } catch (e2) {}
+    form.hidden = true;
+    modal.querySelector(".modal__success").hidden = false;
+    var text = "Заявка с сайта (всплывающее окно)\nКонтакт: " + v;
+    window.open("https://t.me/batischev97?text=" + encodeURIComponent(text), "_blank", "noopener,noreferrer");
+    setTimeout(close, 2500);
+  });
+})();
