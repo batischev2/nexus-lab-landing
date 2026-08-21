@@ -254,6 +254,7 @@
       <nav class="nav__links" data-i18n-aria="nav.aria" aria-label="Разделы">
         <a href="#how" data-i18n="nav.how">Как работает</a>
         <a href="#services" data-i18n="nav.services">Услуги</a>
+        <a href="#cases">Кейсы</a>
         <a href="#packages" data-i18n="nav.packages">Пакеты</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
       </nav>
@@ -319,8 +320,72 @@
       </div>
     </section>
 
-    <!-- VALUE: что делаем / боли / как решаем / почему мы -->
-    <section class="value" id="pain" aria-labelledby="pain-title">
+    <!-- PAIN -->
+    <section class="familiar" id="pain" aria-labelledby="familiar-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="familiar__eyebrow">Проблемы бизнеса</p>
+          <h2 id="familiar-title">Знакомо?</h2>
+          <p>Так выглядит система, которая расходует бюджет, но не превращает внимание людей в клиентов.</p>
+        </div>
+
+        <div class="familiar__grid reveal">
+          <article class="familiar-card">
+            <span class="familiar-card__num">01</span>
+            <div class="familiar-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 6h16v12H4z"/>
+                <path d="m7 10 3 3 3-4 4 4"/>
+                <path d="M17 10v3h-3"/>
+              </svg>
+            </div>
+            <h3>Реклама работает, а телефон молчит</h3>
+            <p>Объявления крутятся, деньги списываются, но заявок нет. Бюджет уходит без понятного результата.</p>
+          </article>
+
+          <article class="familiar-card">
+            <span class="familiar-card__num">02</span>
+            <div class="familiar-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 5v5h5"/>
+                <path d="M6.5 9.5A7 7 0 1 1 6 15"/>
+                <path d="M12 8v4l3 2"/>
+              </svg>
+            </div>
+            <h3>Отчёты есть, новых клиентов нет</h3>
+            <p>Подрядчик показывает клики и охваты, но из цифр непонятно главное — сколько людей реально обратилось.</p>
+          </article>
+
+          <article class="familiar-card">
+            <span class="familiar-card__num">03</span>
+            <div class="familiar-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="7"/>
+                <path d="M12 8v4l3 2"/>
+                <path d="M12 3V1M12 23v-2M3 12H1M23 12h-2"/>
+              </svg>
+            </div>
+            <h3>Сайт выглядит нормально, но не продаёт</h3>
+            <p>Посетители заходят и уходят. Страница не отвечает на их вопросы и не подводит к простому действию.</p>
+          </article>
+
+          <article class="familiar-card">
+            <span class="familiar-card__num">04</span>
+            <div class="familiar-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="6"/>
+                <path d="m16 16 4 4M8 11h6M11 8v6"/>
+              </svg>
+            </div>
+            <h3>Заявка пришла, но клиент уже ушёл</h3>
+            <p>Человек написал вечером, ответ получил утром — и уже выбрал конкурента, который оказался быстрее.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUE: что делаем / как решаем / почему мы -->
+    <section class="value" aria-labelledby="pain-title">
       <div class="wrap">
         <div class="value__panel reveal">
           <p class="value__badge" data-i18n="pain.badge">Для вашего бизнеса</p>
@@ -336,21 +401,11 @@
             </article>
             <article class="value__col">
               <span class="value__num" aria-hidden="true">02</span>
-              <h3 data-i18n="pain.pain.t">Знакомо?</h3>
-              <ul class="value__list">
-                <li data-i18n="pain.pain.1">Реклама крутится, деньги списываются — а телефон молчит</li>
-                <li data-i18n="pain.pain.2">Подрядчик присылает отчёты, но новых клиентов в них не видно</li>
-                <li data-i18n="pain.pain.3">Сайт есть и выглядит нормально — а заявок с него нет</li>
-                <li data-i18n="pain.pain.4">Клиент написал вечером, ответили утром — а он уже купил у других</li>
-              </ul>
-            </article>
-            <article class="value__col">
-              <span class="value__num" aria-hidden="true">03</span>
               <h3 data-i18n="pain.solve.t">Как решаем</h3>
               <p data-i18n="pain.solve.p">Страница под рекламу, бот для приёма заявок, Директ с аналитикой. Запускаем, смотрим цифры, усиливаем то, что приводит клиентов.</p>
             </article>
             <article class="value__col">
-              <span class="value__num" aria-hidden="true">04</span>
+              <span class="value__num" aria-hidden="true">03</span>
               <h3 data-i18n="pain.why.t">Почему мы</h3>
               <p data-i18n="pain.why.p">Два партнёра без агентской прослойки: код, SEO и Директ в одних руках. Фиксируем цену и сроки до старта, работаем по всей России.</p>
             </article>
@@ -431,6 +486,82 @@
             </div>
             <p data-i18n="svc.4.p">Настройка Поиска и РСЯ, ведение и оптимизация. Аудит — бесплатно, рекламный бюджет — отдельно.</p>
             <span class="service__note" data-i18n="svc.4.note">Ведение от 15 000 ₽/мес или % от бюджета</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASES -->
+    <section class="cases" id="cases" aria-labelledby="cases-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="cases__eyebrow">Портфолио</p>
+          <h2 id="cases-title">Кейсы</h2>
+          <p>Каркас для проектов: задача, решение и измеримый результат. Скоро добавим подробные разборы.</p>
+        </div>
+
+        <div class="cases__grid reveal">
+          <article class="case-card">
+            <div class="case-card__visual" aria-hidden="true">
+              <span class="case-card__index">01</span>
+              <div class="case-card__mock case-card__mock--site">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="case-card__body">
+              <div class="case-card__top">
+                <p class="case-card__type">Сайт + реклама</p>
+                <span class="case-card__status">Скоро</span>
+              </div>
+              <h3>Лендинг под поток заявок</h3>
+              <dl class="case-card__facts">
+                <div><dt>Задача</dt><dd>—</dd></div>
+                <div><dt>Решение</dt><dd>—</dd></div>
+                <div><dt>Результат</dt><dd>—</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-card__visual case-card__visual--blue" aria-hidden="true">
+              <span class="case-card__index">02</span>
+              <div class="case-card__mock case-card__mock--bot">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="case-card__body">
+              <div class="case-card__top">
+                <p class="case-card__type">Telegram-бот</p>
+                <span class="case-card__status">Скоро</span>
+              </div>
+              <h3>Автоматизация приёма заявок</h3>
+              <dl class="case-card__facts">
+                <div><dt>Задача</dt><dd>—</dd></div>
+                <div><dt>Решение</dt><dd>—</dd></div>
+                <div><dt>Результат</dt><dd>—</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-card__visual case-card__visual--mix" aria-hidden="true">
+              <span class="case-card__index">03</span>
+              <div class="case-card__mock case-card__mock--data">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="case-card__body">
+              <div class="case-card__top">
+                <p class="case-card__type">Автоматизация</p>
+                <span class="case-card__status">Скоро</span>
+              </div>
+              <h3>Система обработки данных</h3>
+              <dl class="case-card__facts">
+                <div><dt>Задача</dt><dd>—</dd></div>
+                <div><dt>Решение</dt><dd>—</dd></div>
+                <div><dt>Результат</dt><dd>—</dd></div>
+              </dl>
+            </div>
           </article>
         </div>
       </div>

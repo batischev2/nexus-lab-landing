@@ -275,9 +275,6 @@
 (function () {
   var modal = document.getElementById("contact-modal");
   if (!modal) return;
-  try {
-    if (sessionStorage.getItem("modalDismissed") || localStorage.getItem("modalSubmitted")) return;
-  } catch (e) {}
 
   var input = document.getElementById("modal-contact");
   var open = function () {
@@ -288,7 +285,6 @@
   var close = function () {
     modal.hidden = true;
     document.body.classList.remove("modal-open");
-    try { sessionStorage.setItem("modalDismissed", "1"); } catch (e) {}
   };
 
   setTimeout(open, 10000);
@@ -308,7 +304,6 @@
     if (typeof window.ym === "function" && window.NEXUS_METRIKA_ID) {
       window.ym(window.NEXUS_METRIKA_ID, "reachGoal", "modal_submit");
     }
-    try { localStorage.setItem("modalSubmitted", "1"); } catch (e2) {}
     form.hidden = true;
     modal.querySelector(".modal__success").hidden = false;
     var text = "Заявка с сайта (всплывающее окно)\nКонтакт: " + v;
